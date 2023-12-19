@@ -57,5 +57,12 @@ namespace ShippingSystem
         {
 
         }
+
+        private void TextToAddDriver_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AddDriver AddDriver = new AddDriver();
+            AddDriver.Show();
+        }
     }
 }

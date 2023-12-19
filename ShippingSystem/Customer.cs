@@ -198,5 +198,12 @@ namespace ShippingSystem
             Driver driverForm = new Driver();
             driverForm.Show();
         }
+
+        private void TextToAddCustomer_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AddCustomer addCus = new AddCustomer();
+            addCus.Show();
+        }
     }
 }

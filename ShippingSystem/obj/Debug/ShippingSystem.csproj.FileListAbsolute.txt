@@ -61,3 +61,5 @@ C:\Users\Hi\source\repos\ShippingSystem\ShippingSystem\obj\Debug\ShippingSystem.
 C:\Users\Hi\source\repos\ShippingSystem\ShippingSystem\obj\Debug\ShippingSystem.Customer.aa-DJ.resources
 C:\Users\Hi\source\repos\ShippingSystem\ShippingSystem\obj\Debug\ShippingSystem.Customer.en-GB.resources
 C:\Users\Hi\source\repos\ShippingSystem\ShippingSystem\obj\Debug\ShippingSystem.Driver.resources
+C:\Users\Hi\source\repos\ShippingSystem\ShippingSystem\obj\Debug\ShippingSystem.AddCustomer.resources
+C:\Users\Hi\source\repos\ShippingSystem\ShippingSystem\obj\Debug\ShippingSystem.AddDriver.resources
