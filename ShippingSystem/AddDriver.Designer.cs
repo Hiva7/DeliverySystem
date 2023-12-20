@@ -32,7 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddDriver));
             this.gunaElipse1 = new Guna.UI.WinForms.GunaElipse(this.components);
             this.gunaGradient2Panel7 = new Guna.UI.WinForms.GunaGradient2Panel();
-            this.Update = new Guna.UI.WinForms.GunaButton();
+            this.Clear = new Guna.UI.WinForms.GunaButton();
             this.TextToAddDriver = new Guna.UI.WinForms.GunaButton();
             this.gunaGradient2Panel9 = new Guna.UI.WinForms.GunaGradient2Panel();
             this.gunaLabel4 = new Guna.UI.WinForms.GunaLabel();
@@ -41,11 +41,11 @@
             this.gunaGradient2Panel5 = new Guna.UI.WinForms.GunaGradient2Panel();
             this.gunaGradient2Panel4 = new Guna.UI.WinForms.GunaGradient2Panel();
             this.gunaPictureBox3 = new Guna.UI.WinForms.GunaPictureBox();
-            this.textToAdd_Contact = new Guna.UI.WinForms.GunaTextBox();
+            this.TextToAddLicence = new Guna.UI.WinForms.GunaTextBox();
             this.gunaGradient2Panel3 = new Guna.UI.WinForms.GunaGradient2Panel();
             this.gunaGradient2Panel1 = new Guna.UI.WinForms.GunaGradient2Panel();
             this.gunaPictureBox2 = new Guna.UI.WinForms.GunaPictureBox();
-            this.textToAddL_name = new Guna.UI.WinForms.GunaTextBox();
+            this.textToAddContact = new Guna.UI.WinForms.GunaTextBox();
             this.gunaGradient2Panel2 = new Guna.UI.WinForms.GunaGradient2Panel();
             this.idText = new Guna.UI.WinForms.GunaGradient2Panel();
             this.gunaPictureBox1 = new Guna.UI.WinForms.GunaPictureBox();
@@ -60,7 +60,9 @@
             this.gunaGradient2Panel10 = new Guna.UI.WinForms.GunaGradient2Panel();
             this.gunaGradient2Panel11 = new Guna.UI.WinForms.GunaGradient2Panel();
             this.gunaPictureBox6 = new Guna.UI.WinForms.GunaPictureBox();
-            this.gunaTextBox2 = new Guna.UI.WinForms.GunaTextBox();
+            this.TextToAddEploymentDate = new Guna.UI.WinForms.GunaTextBox();
+            this.gunaElipse3 = new Guna.UI.WinForms.GunaElipse(this.components);
+            this.gunaElipse4 = new Guna.UI.WinForms.GunaElipse(this.components);
             this.gunaGradient2Panel7.SuspendLayout();
             this.gunaGradient2Panel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox5)).BeginInit();
@@ -89,7 +91,7 @@
             // gunaGradient2Panel7
             // 
             this.gunaGradient2Panel7.BackColor = System.Drawing.Color.Transparent;
-            this.gunaGradient2Panel7.Controls.Add(this.Update);
+            this.gunaGradient2Panel7.Controls.Add(this.Clear);
             this.gunaGradient2Panel7.Controls.Add(this.TextToAddDriver);
             this.gunaGradient2Panel7.Controls.Add(this.gunaGradient2Panel9);
             this.gunaGradient2Panel7.GradientColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(127)))), ((int)(((byte)(199)))));
@@ -100,32 +102,32 @@
             this.gunaGradient2Panel7.Size = new System.Drawing.Size(390, 291);
             this.gunaGradient2Panel7.TabIndex = 27;
             // 
-            // Update
+            // Clear
             // 
-            this.Update.AnimationHoverSpeed = 0.07F;
-            this.Update.AnimationSpeed = 0.03F;
-            this.Update.BackColor = System.Drawing.Color.Transparent;
-            this.Update.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(46)))), ((int)(((byte)(90)))));
-            this.Update.BorderColor = System.Drawing.Color.Black;
-            this.Update.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.Update.FocusedColor = System.Drawing.Color.Empty;
-            this.Update.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Bold);
-            this.Update.ForeColor = System.Drawing.Color.White;
-            this.Update.Image = ((System.Drawing.Image)(resources.GetObject("Update.Image")));
-            this.Update.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.Update.ImageSize = new System.Drawing.Size(25, 25);
-            this.Update.Location = new System.Drawing.Point(13, 217);
-            this.Update.Name = "Update";
-            this.Update.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.Update.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.Update.OnHoverForeColor = System.Drawing.Color.White;
-            this.Update.OnHoverImage = null;
-            this.Update.OnPressedColor = System.Drawing.Color.Black;
-            this.Update.Radius = 10;
-            this.Update.Size = new System.Drawing.Size(160, 42);
-            this.Update.TabIndex = 34;
-            this.Update.Text = "Clear";
-            this.Update.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Clear.AnimationHoverSpeed = 0.07F;
+            this.Clear.AnimationSpeed = 0.03F;
+            this.Clear.BackColor = System.Drawing.Color.Transparent;
+            this.Clear.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(46)))), ((int)(((byte)(90)))));
+            this.Clear.BorderColor = System.Drawing.Color.Black;
+            this.Clear.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.Clear.FocusedColor = System.Drawing.Color.Empty;
+            this.Clear.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Bold);
+            this.Clear.ForeColor = System.Drawing.Color.White;
+            this.Clear.Image = ((System.Drawing.Image)(resources.GetObject("Clear.Image")));
+            this.Clear.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Clear.ImageSize = new System.Drawing.Size(25, 25);
+            this.Clear.Location = new System.Drawing.Point(13, 217);
+            this.Clear.Name = "Clear";
+            this.Clear.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.Clear.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.Clear.OnHoverForeColor = System.Drawing.Color.White;
+            this.Clear.OnHoverImage = null;
+            this.Clear.OnPressedColor = System.Drawing.Color.Black;
+            this.Clear.Radius = 10;
+            this.Clear.Size = new System.Drawing.Size(160, 42);
+            this.Clear.TabIndex = 34;
+            this.Clear.Text = "Clear";
+            this.Clear.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // TextToAddDriver
             // 
@@ -207,7 +209,7 @@
             // 
             this.gunaGradient2Panel5.BackColor = System.Drawing.Color.Transparent;
             this.gunaGradient2Panel5.Controls.Add(this.gunaGradient2Panel4);
-            this.gunaGradient2Panel5.Controls.Add(this.textToAdd_Contact);
+            this.gunaGradient2Panel5.Controls.Add(this.TextToAddLicence);
             this.gunaGradient2Panel5.GradientColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(41)))), ((int)(((byte)(62)))));
             this.gunaGradient2Panel5.GradientColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(41)))), ((int)(((byte)(62)))));
             this.gunaGradient2Panel5.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
@@ -241,28 +243,28 @@
             this.gunaPictureBox3.TabIndex = 25;
             this.gunaPictureBox3.TabStop = false;
             // 
-            // textToAdd_Contact
+            // TextToAddLicence
             // 
-            this.textToAdd_Contact.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(146)))), ((int)(((byte)(165)))));
-            this.textToAdd_Contact.BorderColor = System.Drawing.Color.Silver;
-            this.textToAdd_Contact.BorderSize = 0;
-            this.textToAdd_Contact.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textToAdd_Contact.FocusedBaseColor = System.Drawing.Color.White;
-            this.textToAdd_Contact.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.textToAdd_Contact.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.textToAdd_Contact.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.textToAdd_Contact.Location = new System.Drawing.Point(18, 21);
-            this.textToAdd_Contact.Name = "textToAdd_Contact";
-            this.textToAdd_Contact.PasswordChar = '\0';
-            this.textToAdd_Contact.SelectedText = "";
-            this.textToAdd_Contact.Size = new System.Drawing.Size(263, 40);
-            this.textToAdd_Contact.TabIndex = 6;
+            this.TextToAddLicence.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(146)))), ((int)(((byte)(165)))));
+            this.TextToAddLicence.BorderColor = System.Drawing.Color.Silver;
+            this.TextToAddLicence.BorderSize = 0;
+            this.TextToAddLicence.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.TextToAddLicence.FocusedBaseColor = System.Drawing.Color.White;
+            this.TextToAddLicence.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.TextToAddLicence.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.TextToAddLicence.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.TextToAddLicence.Location = new System.Drawing.Point(18, 21);
+            this.TextToAddLicence.Name = "TextToAddLicence";
+            this.TextToAddLicence.PasswordChar = '\0';
+            this.TextToAddLicence.SelectedText = "";
+            this.TextToAddLicence.Size = new System.Drawing.Size(263, 40);
+            this.TextToAddLicence.TabIndex = 4;
             // 
             // gunaGradient2Panel3
             // 
             this.gunaGradient2Panel3.BackColor = System.Drawing.Color.Transparent;
             this.gunaGradient2Panel3.Controls.Add(this.gunaGradient2Panel1);
-            this.gunaGradient2Panel3.Controls.Add(this.textToAddL_name);
+            this.gunaGradient2Panel3.Controls.Add(this.textToAddContact);
             this.gunaGradient2Panel3.GradientColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(41)))), ((int)(((byte)(62)))));
             this.gunaGradient2Panel3.GradientColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(41)))), ((int)(((byte)(62)))));
             this.gunaGradient2Panel3.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
@@ -296,22 +298,22 @@
             this.gunaPictureBox2.TabIndex = 25;
             this.gunaPictureBox2.TabStop = false;
             // 
-            // textToAddL_name
+            // textToAddContact
             // 
-            this.textToAddL_name.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(146)))), ((int)(((byte)(165)))));
-            this.textToAddL_name.BorderColor = System.Drawing.Color.Silver;
-            this.textToAddL_name.BorderSize = 0;
-            this.textToAddL_name.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textToAddL_name.FocusedBaseColor = System.Drawing.Color.White;
-            this.textToAddL_name.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.textToAddL_name.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.textToAddL_name.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.textToAddL_name.Location = new System.Drawing.Point(18, 21);
-            this.textToAddL_name.Name = "textToAddL_name";
-            this.textToAddL_name.PasswordChar = '\0';
-            this.textToAddL_name.SelectedText = "";
-            this.textToAddL_name.Size = new System.Drawing.Size(263, 40);
-            this.textToAddL_name.TabIndex = 4;
+            this.textToAddContact.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(146)))), ((int)(((byte)(165)))));
+            this.textToAddContact.BorderColor = System.Drawing.Color.Silver;
+            this.textToAddContact.BorderSize = 0;
+            this.textToAddContact.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textToAddContact.FocusedBaseColor = System.Drawing.Color.White;
+            this.textToAddContact.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.textToAddContact.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.textToAddContact.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.textToAddContact.Location = new System.Drawing.Point(18, 21);
+            this.textToAddContact.Name = "textToAddContact";
+            this.textToAddContact.PasswordChar = '\0';
+            this.textToAddContact.SelectedText = "";
+            this.textToAddContact.Size = new System.Drawing.Size(263, 40);
+            this.textToAddContact.TabIndex = 3;
             // 
             // gunaGradient2Panel2
             // 
@@ -468,13 +470,13 @@
             this.gunaTextBox1.Radius = 5;
             this.gunaTextBox1.SelectedText = "";
             this.gunaTextBox1.Size = new System.Drawing.Size(256, 40);
-            this.gunaTextBox1.TabIndex = 2;
+            this.gunaTextBox1.TabIndex = 1;
             // 
             // gunaGradient2Panel10
             // 
             this.gunaGradient2Panel10.BackColor = System.Drawing.Color.Transparent;
             this.gunaGradient2Panel10.Controls.Add(this.gunaGradient2Panel11);
-            this.gunaGradient2Panel10.Controls.Add(this.gunaTextBox2);
+            this.gunaGradient2Panel10.Controls.Add(this.TextToAddEploymentDate);
             this.gunaGradient2Panel10.GradientColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(41)))), ((int)(((byte)(62)))));
             this.gunaGradient2Panel10.GradientColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(41)))), ((int)(((byte)(62)))));
             this.gunaGradient2Panel10.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
@@ -508,24 +510,34 @@
             this.gunaPictureBox6.TabIndex = 24;
             this.gunaPictureBox6.TabStop = false;
             // 
-            // gunaTextBox2
+            // TextToAddEploymentDate
             // 
-            this.gunaTextBox2.BackColor = System.Drawing.Color.Transparent;
-            this.gunaTextBox2.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(146)))), ((int)(((byte)(165)))));
-            this.gunaTextBox2.BorderColor = System.Drawing.Color.Silver;
-            this.gunaTextBox2.BorderSize = 0;
-            this.gunaTextBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.gunaTextBox2.FocusedBaseColor = System.Drawing.Color.White;
-            this.gunaTextBox2.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.gunaTextBox2.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.gunaTextBox2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gunaTextBox2.Location = new System.Drawing.Point(17, 21);
-            this.gunaTextBox2.Name = "gunaTextBox2";
-            this.gunaTextBox2.PasswordChar = '\0';
-            this.gunaTextBox2.Radius = 5;
-            this.gunaTextBox2.SelectedText = "";
-            this.gunaTextBox2.Size = new System.Drawing.Size(256, 40);
-            this.gunaTextBox2.TabIndex = 2;
+            this.TextToAddEploymentDate.BackColor = System.Drawing.Color.Transparent;
+            this.TextToAddEploymentDate.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(146)))), ((int)(((byte)(165)))));
+            this.TextToAddEploymentDate.BorderColor = System.Drawing.Color.Silver;
+            this.TextToAddEploymentDate.BorderSize = 0;
+            this.TextToAddEploymentDate.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.TextToAddEploymentDate.FocusedBaseColor = System.Drawing.Color.White;
+            this.TextToAddEploymentDate.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.TextToAddEploymentDate.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.TextToAddEploymentDate.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.TextToAddEploymentDate.Location = new System.Drawing.Point(17, 21);
+            this.TextToAddEploymentDate.Name = "TextToAddEploymentDate";
+            this.TextToAddEploymentDate.PasswordChar = '\0';
+            this.TextToAddEploymentDate.Radius = 5;
+            this.TextToAddEploymentDate.SelectedText = "";
+            this.TextToAddEploymentDate.Size = new System.Drawing.Size(256, 40);
+            this.TextToAddEploymentDate.TabIndex = 5;
+            // 
+            // gunaElipse3
+            // 
+            this.gunaElipse3.Radius = 5;
+            this.gunaElipse3.TargetControl = this.textToAddContact;
+            // 
+            // gunaElipse4
+            // 
+            this.gunaElipse4.Radius = 5;
+            this.gunaElipse4.TargetControl = this.TextToAddLicence;
             // 
             // AddDriver
             // 
@@ -575,7 +587,7 @@
 
         private Guna.UI.WinForms.GunaElipse gunaElipse1;
         private Guna.UI.WinForms.GunaGradient2Panel gunaGradient2Panel7;
-        private Guna.UI.WinForms.GunaButton Update;
+        private Guna.UI.WinForms.GunaButton Clear;
         private Guna.UI.WinForms.GunaButton TextToAddDriver;
         private Guna.UI.WinForms.GunaGradient2Panel gunaGradient2Panel9;
         private Guna.UI.WinForms.GunaLabel gunaLabel4;
@@ -584,11 +596,11 @@
         private Guna.UI.WinForms.GunaGradient2Panel gunaGradient2Panel5;
         private Guna.UI.WinForms.GunaGradient2Panel gunaGradient2Panel4;
         private Guna.UI.WinForms.GunaPictureBox gunaPictureBox3;
-        private Guna.UI.WinForms.GunaTextBox textToAdd_Contact;
+        private Guna.UI.WinForms.GunaTextBox TextToAddLicence;
         private Guna.UI.WinForms.GunaGradient2Panel gunaGradient2Panel3;
         private Guna.UI.WinForms.GunaGradient2Panel gunaGradient2Panel1;
         private Guna.UI.WinForms.GunaPictureBox gunaPictureBox2;
-        private Guna.UI.WinForms.GunaTextBox textToAddL_name;
+        private Guna.UI.WinForms.GunaTextBox textToAddContact;
         private Guna.UI.WinForms.GunaGradient2Panel gunaGradient2Panel2;
         private Guna.UI.WinForms.GunaGradient2Panel idText;
         private Guna.UI.WinForms.GunaPictureBox gunaPictureBox1;
@@ -599,10 +611,12 @@
         private Guna.UI.WinForms.GunaGradient2Panel gunaGradient2Panel10;
         private Guna.UI.WinForms.GunaGradient2Panel gunaGradient2Panel11;
         private Guna.UI.WinForms.GunaPictureBox gunaPictureBox6;
-        private Guna.UI.WinForms.GunaTextBox gunaTextBox2;
+        private Guna.UI.WinForms.GunaTextBox TextToAddEploymentDate;
         private Guna.UI.WinForms.GunaGradient2Panel gunaGradient2Panel6;
         private Guna.UI.WinForms.GunaGradient2Panel gunaGradient2Panel8;
         private Guna.UI.WinForms.GunaPictureBox gunaPictureBox4;
         private Guna.UI.WinForms.GunaTextBox gunaTextBox1;
+        private Guna.UI.WinForms.GunaElipse gunaElipse3;
+        private Guna.UI.WinForms.GunaElipse gunaElipse4;
     }
 }

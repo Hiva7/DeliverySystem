@@ -56,5 +56,17 @@ namespace ShippingSystem
         {
 
         }
+
+        private void gunaGradientCircleButton1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gunaPictureBox6_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AddOrder addorDer = new AddOrder();
+            addorDer.Show();
+        }
     }
 }

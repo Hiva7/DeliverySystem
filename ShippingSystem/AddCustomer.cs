@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Amazon.SecurityToken.Model;
 
 namespace ShippingSystem
 {
@@ -47,6 +48,16 @@ namespace ShippingSystem
         private void gunaLabel1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void TextToAddDriver_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AddCustomer_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }

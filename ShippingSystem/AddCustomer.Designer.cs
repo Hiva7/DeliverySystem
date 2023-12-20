@@ -166,7 +166,8 @@
             this.textToAdd_Contact.PasswordChar = '\0';
             this.textToAdd_Contact.SelectedText = "";
             this.textToAdd_Contact.Size = new System.Drawing.Size(263, 40);
-            this.textToAdd_Contact.TabIndex = 6;
+            this.textToAdd_Contact.TabIndex = 3;
+            this.textToAdd_Contact.Tag = "#";
             // 
             // gunaGradient2Panel3
             // 
@@ -222,7 +223,8 @@
             this.textToAddL_name.PasswordChar = '\0';
             this.textToAddL_name.SelectedText = "";
             this.textToAddL_name.Size = new System.Drawing.Size(263, 40);
-            this.textToAddL_name.TabIndex = 4;
+            this.textToAddL_name.TabIndex = 2;
+            this.textToAddL_name.Tag = "#";
             // 
             // gunaGradient2Panel2
             // 
@@ -280,7 +282,8 @@
             this.TextAddF_name.Radius = 5;
             this.TextAddF_name.SelectedText = "";
             this.TextAddF_name.Size = new System.Drawing.Size(256, 40);
-            this.TextAddF_name.TabIndex = 2;
+            this.TextAddF_name.TabIndex = 1;
+            this.TextAddF_name.Tag = "#";
             // 
             // gunaElipse2
             // 
@@ -357,9 +360,11 @@
             this.TextToAddDriver.OnPressedColor = System.Drawing.Color.Black;
             this.TextToAddDriver.Radius = 10;
             this.TextToAddDriver.Size = new System.Drawing.Size(160, 42);
-            this.TextToAddDriver.TabIndex = 35;
+            this.TextToAddDriver.TabIndex = 4;
+            this.TextToAddDriver.Tag = "#";
             this.TextToAddDriver.Text = "Add";
             this.TextToAddDriver.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TextToAddDriver.Click += new System.EventHandler(this.TextToAddDriver_Click);
             // 
             // gunaGradient2Panel9
             // 
@@ -428,6 +433,7 @@
             this.Name = "AddCustomer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddCustomer";
+            this.Load += new System.EventHandler(this.AddCustomer_Load);
             this.gunaGradient2Panel5.ResumeLayout(false);
             this.gunaGradient2Panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox3)).EndInit();
