@@ -43,15 +43,14 @@ public class Database
                 }
             },
             {
-                "Driver",
+                "Truck",
                 new Dictionary<string, BsonType>
                 {
-                    { "First_name", BsonType.String },
-                    { "Last_name", BsonType.String },
-                    { "Employment_date", BsonType.String },
-                    { "License_number", BsonType.String },
-                    { "Contact", BsonType.String },
-                    { "Address", BsonType.String }
+                    { "Max_Capacity", BsonType.Decimal128},
+                    { "Capacity", BsonType.Decimal128},
+                    { "Start_Time", BsonType.DateTime},
+                    { "Travel_Time", BsonType.String},
+                    { "Location_id", BsonType.Array}
                 }
             },
             {
@@ -72,8 +71,7 @@ public class Database
                     { "Status", BsonType.String },
                     { "Price", BsonType.Decimal128 },
                     { "Customer_id", BsonType.Int32 },
-                    { "Location_id", BsonType.Array },
-                    { "Driver_id", BsonType.Int32 }
+                    { "Truck_id", BsonType.Int32 }
                 }
             }
         };
@@ -89,6 +87,7 @@ public class Database
         // If the field or collection is not defined in the expectedDataTypes dictionary, assume the data type is valid
         return true;
     }
+
 
     private bool ValidateField(string collectionName, string fieldName, string fieldValue)
     {
@@ -136,7 +135,7 @@ public class Database
 
         if (!documents.Any())
         {
-            Console.WriteLine("No documents found in the collection");
+            Console.WriteLine("No documents found in the collection: "+myCollection);
         }
 
         return documents;
@@ -195,22 +194,30 @@ public class Database
         return 0;
     }
 
-    public List<BsonDocument> SearchRecord(string myCollection, string myField, string myQuery)
+    public List<BsonDocument> SearchRecord<T>(string myCollection, string myField, T myQuery)
     {
         var collection = database.GetCollection<BsonDocument>(myCollection);
         if (collection is null)
         {
             throw new Exception("Collection not found");
         }
+        var filter = Builders<BsonDocument>.Filter.Eq(myField, myQuery);
+        var documents = collection.Find(filter).ToList();
 
-        var filter = Builders<BsonDocument>.Filter.Regex(
-            myField,
-            new BsonRegularExpression(myQuery, "i")
-        );
+        List<BsonDocument> matchedDocuments = new List<BsonDocument>();
+        foreach (var document in documents)
+        {
+            if (document.Contains(myField))
+            {
+                matchedDocuments.Add(document);
+            }
+        }
+        if (matchedDocuments.Count == 0)
+        {
+            Console.WriteLine("No matched documents");
+        }
 
-        var matchingDocuments = collection.Find(filter).ToList();
-
-        return matchingDocuments;
+        return matchedDocuments;
     }
 
 
