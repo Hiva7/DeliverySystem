@@ -54,11 +54,7 @@
             this.gunaPictureBox7 = new Guna.UI.WinForms.GunaPictureBox();
             this.gunaCirclePictureBox1 = new Guna.UI.WinForms.GunaCirclePictureBox();
             this.eventLog1 = new System.Diagnostics.EventLog();
-            this.latitude = new System.Windows.Forms.TextBox();
-            this.longitude = new System.Windows.Forms.TextBox();
-            this.GoTo = new System.Windows.Forms.Button();
-            this.LatitudeValue = new System.Windows.Forms.TextBox();
-            this.LongitudeValue = new System.Windows.Forms.TextBox();
+            this.CoordinateValue = new System.Windows.Forms.Label();
             this.gunaGradient2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).BeginInit();
             this.gunaGradient2Panel7.SuspendLayout();
@@ -281,11 +277,7 @@
             // gunaGradient2Panel7
             // 
             this.gunaGradient2Panel7.BackColor = System.Drawing.Color.Transparent;
-            this.gunaGradient2Panel7.Controls.Add(this.LongitudeValue);
-            this.gunaGradient2Panel7.Controls.Add(this.LatitudeValue);
-            this.gunaGradient2Panel7.Controls.Add(this.GoTo);
-            this.gunaGradient2Panel7.Controls.Add(this.longitude);
-            this.gunaGradient2Panel7.Controls.Add(this.latitude);
+            this.gunaGradient2Panel7.Controls.Add(this.CoordinateValue);
             this.gunaGradient2Panel7.Controls.Add(this.Map);
             this.gunaGradient2Panel7.Controls.Add(this.gunaDataGridView1);
             this.gunaGradient2Panel7.GradientColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(127)))), ((int)(((byte)(199)))));
@@ -423,43 +415,14 @@
             // 
             this.eventLog1.SynchronizingObject = this;
             // 
-            // latitude
+            // CoordinateValue
             // 
-            this.latitude.Location = new System.Drawing.Point(52, 655);
-            this.latitude.Name = "latitude";
-            this.latitude.Size = new System.Drawing.Size(100, 22);
-            this.latitude.TabIndex = 4;
-            // 
-            // longitude
-            // 
-            this.longitude.Location = new System.Drawing.Point(52, 680);
-            this.longitude.Name = "longitude";
-            this.longitude.Size = new System.Drawing.Size(100, 22);
-            this.longitude.TabIndex = 5;
-            // 
-            // GoTo
-            // 
-            this.GoTo.Location = new System.Drawing.Point(183, 679);
-            this.GoTo.Name = "GoTo";
-            this.GoTo.Size = new System.Drawing.Size(75, 23);
-            this.GoTo.TabIndex = 6;
-            this.GoTo.Text = "GoTo";
-            this.GoTo.UseVisualStyleBackColor = true;
-            this.GoTo.Click += new System.EventHandler(this.GoTo_click);
-            // 
-            // LatitudeValue
-            // 
-            this.LatitudeValue.Location = new System.Drawing.Point(52, 3);
-            this.LatitudeValue.Name = "LatitudeValue";
-            this.LatitudeValue.Size = new System.Drawing.Size(100, 22);
-            this.LatitudeValue.TabIndex = 7;
-            // 
-            // LongitudeValue
-            // 
-            this.LongitudeValue.Location = new System.Drawing.Point(52, 31);
-            this.LongitudeValue.Name = "LongitudeValue";
-            this.LongitudeValue.Size = new System.Drawing.Size(100, 22);
-            this.LongitudeValue.TabIndex = 8;
+            this.CoordinateValue.AutoSize = true;
+            this.CoordinateValue.Location = new System.Drawing.Point(49, 31);
+            this.CoordinateValue.Name = "CoordinateValue";
+            this.CoordinateValue.Size = new System.Drawing.Size(73, 16);
+            this.CoordinateValue.TabIndex = 9;
+            this.CoordinateValue.Text = "Coordinate";
             // 
             // Tracking
             // 
@@ -515,10 +478,6 @@
         private Guna.UI.WinForms.GunaCirclePictureBox gunaCirclePictureBox1;
         private System.Diagnostics.EventLog eventLog1;
         private System.Windows.Forms.Panel Map;
-        private System.Windows.Forms.TextBox longitude;
-        private System.Windows.Forms.TextBox latitude;
-        private System.Windows.Forms.Button GoTo;
-        private System.Windows.Forms.TextBox LongitudeValue;
-        private System.Windows.Forms.TextBox LatitudeValue;
+        private System.Windows.Forms.Label CoordinateValue;
     }
 }

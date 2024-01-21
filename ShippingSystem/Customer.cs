@@ -195,7 +195,7 @@ namespace ShippingSystem
         private void gunaButton5_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Driver driverForm = new Driver();
+            Truck driverForm = new Truck();
             driverForm.Show();
         }
 

@@ -46,10 +46,8 @@ public class Database
                 "Truck",
                 new Dictionary<string, BsonType>
                 {
-                    { "Max_Capacity", BsonType.Decimal128},
-                    { "Capacity", BsonType.Decimal128},
                     { "Start_Time", BsonType.DateTime},
-                    { "Travel_Time", BsonType.String},
+                    { "Travel_Time", BsonType.Decimal128},
                     { "Location_id", BsonType.Array}
                 }
             },

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ShippingSystem
 {
-    public partial class AddDriver : Form
+    public partial class AddTruck : Form
     {
-        public AddDriver()
+        public AddTruck()
         {
             InitializeComponent();
         }
@@ -25,7 +25,7 @@ namespace ShippingSystem
         private void gunaButton8_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Driver driver = new Driver();
+            Truck driver = new Truck();
             driver.Show();
         }
     }

@@ -1,6 +1,6 @@
 ﻿namespace ShippingSystem
 {
-    partial class AddDriver
+    partial class AddTruck
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddDriver));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddTruck));
             this.gunaElipse1 = new Guna.UI.WinForms.GunaElipse(this.components);
             this.gunaGradient2Panel7 = new Guna.UI.WinForms.GunaGradient2Panel();
             this.Clear = new Guna.UI.WinForms.GunaButton();

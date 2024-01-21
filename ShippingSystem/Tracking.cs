@@ -13,7 +13,7 @@ using GMap.NET.MapProviders;
 using GMap.NET.WindowsForms;
 using GMap.NET.WindowsForms.Markers;
 using MongoDB.Bson;
-
+using System.Runtime.InteropServices;
 
 namespace ShippingSystem
 {
@@ -46,10 +46,10 @@ namespace ShippingSystem
             InitalizeLocation();
             Map.Controls.Add(gmap);
 
-            LatitudeValue.Text = Convert.ToString(gmap.Position.Lat);
-            LongitudeValue.Text = Convert.ToString(gmap.Position.Lng);
+            CoordinateValue.Text = Convert.ToString(gmap.Position.Lat) + ", " + Convert.ToString(gmap.Position.Lng);
 
-            gmap.OnPositionChanged += updatePosition;
+            gmap.OnPositionChanged += UpdatePosition;
+            gmap.OnMapZoomChanged += UpdatePosition2;
 
             gmap.IgnoreMarkerOnMouseWheel = true;
 
@@ -71,6 +71,8 @@ namespace ShippingSystem
 
             GMapOverlay markers = new GMapOverlay("markers");
             GMapOverlay routes = new GMapOverlay("routes");
+
+            int i = 1;
 
             foreach (BsonArray arr in data2)
             {
@@ -141,31 +143,136 @@ namespace ShippingSystem
                     }
                 }
 
+                var truckData = db.SearchRecord(coll2, "Truck_id", i);
+
+                DateTime startTime = DateTime.MinValue;
+                double travelTime = 0;
+
+                foreach (var document in truckData)
+                {
+                    Console.WriteLine(document.ToString());
+
+                    // Check if the "Start_Time" field exists in the document before accessing it
+                    if (document.Contains("Start_Time"))
+                    {
+                        BsonDateTime bsonDateTime = document["Start_Time"].AsBsonDateTime;
+                        startTime = bsonDateTime.ToUniversalTime();
+                        Console.WriteLine($"Start Time: {startTime}");
+                    }
+                    else
+                    {
+                        // Handle the case where "Start_Time" field is not present in the document
+                        Console.WriteLine("Start_Time field not found in the document");
+                    }
+
+
+                    // Check if the "Travel_Time" field exists in the document before accessing it
+                    if (document.Contains("Travel_Time"))
+                    {
+                        BsonDecimal128 travelTimeBson = document["Travel_Time"].AsDecimal128;
+                        travelTime = (double)travelTimeBson.ToDecimal();
+                        Console.WriteLine($"Travel Time: {travelTime}");
+                    }
+                    else
+                    {
+                        // Handle the case where "Travel_Time" field is not present in the document
+                        Console.WriteLine("Travel_Time field not found in the document");
+                    }
+                }
+
                 try
                 {
+
+                    // Get the current time in UTC
+                    DateTime currentTime = DateTime.UtcNow;
+
+                    // Calculate the difference in seconds between the current time and the start time
+                    double timeDifference = (currentTime - startTime).TotalSeconds;
+
+                    // Calculate the current position
+                    double currentPosition = timeDifference % (travelTime - 2);
+
+                    Console.WriteLine($"Current Position: {currentPosition}");
+
+                    // Calculate the percentage of the trip completed
+                    double percentageCompleted = currentPosition / travelTime;
+
+                    // Calculate the position of the marker
+                    double markerX, markerY;
+
+                    if (percentageCompleted <= 0.5)
+                    {
+                        // The marker is on the first half of the trip
+                        percentageCompleted *= 2; // Adjust the percentage to be out of 100 for the first half
+                        markerX = Convert.ToDouble(firstLocationX) + (Convert.ToDouble(secondLocationX) - Convert.ToDouble(firstLocationX)) * percentageCompleted;
+                        markerY = Convert.ToDouble(firstLocationY) + (Convert.ToDouble(secondLocationY) - Convert.ToDouble(firstLocationY)) * percentageCompleted;
+                    }
+                    else
+                    {
+                        // The marker is on the second half of the trip
+                        percentageCompleted = (percentageCompleted - 0.5) * 2; // Adjust the percentage to be out of 100 for the second half
+                        markerX = Convert.ToDouble(secondLocationX) + (Convert.ToDouble(firstLocationX) - Convert.ToDouble(secondLocationX)) * percentageCompleted;
+                        markerY = Convert.ToDouble(secondLocationY) + (Convert.ToDouble(firstLocationY) - Convert.ToDouble(secondLocationY)) * percentageCompleted;
+                    }
+
+                    //Create a Bitmap
+                    Bitmap bmpMarker = new Bitmap(20, 20);
+
+                    using (Graphics g = Graphics.FromImage(bmpMarker))
+                    {
+                        // Draw a lime circle
+                        g.FillEllipse(Brushes.Lime, 0, 0, bmpMarker.Width, bmpMarker.Height);
+
+                        // Draw a border
+                        Pen borderPen = new Pen(Color.Black, 2); // Change the color and width as needed
+                        g.DrawEllipse(borderPen, 1, 1, bmpMarker.Width - 2, bmpMarker.Height - 2);
+                    }
+
+                    // Create a custom marker with an offset
+                    GMarkerGoogle markerTruck = new GMarkerGoogle(new PointLatLng(markerX, markerY), bmpMarker)
+                    {
+                        Offset = new Point(-10, -10) // Adjust these values as needed
+                    };
+
                     GMapMarker marker1 = new GMarkerGoogle(new PointLatLng(Convert.ToDouble(firstLocationX), Convert.ToDouble(firstLocationY)), GMarkerGoogleType.red);
                     GMapMarker marker2 = new GMarkerGoogle(new PointLatLng(Convert.ToDouble(secondLocationX), Convert.ToDouble(secondLocationY)), GMarkerGoogleType.red);
 
-                    marker1.IsVisible = true;
-                    marker2.IsVisible = true;
+                    markers.Markers.Add(markerTruck);
 
                     markers.Markers.Add(marker1);
                     markers.Markers.Add(marker2);
 
-                    // Create the route between the two points
-                    MapRoute route = GMap.NET.MapProviders.OpenStreetMapProvider.Instance.GetRoute(
-                        new PointLatLng(Convert.ToDouble(firstLocationX), Convert.ToDouble(firstLocationY)),
-                        new PointLatLng(Convert.ToDouble(secondLocationX), Convert.ToDouble(secondLocationY)),
-                        false, false, 15);
+                    // Create a new list of points for the first line
+                    List<PointLatLng> points1 = new List<PointLatLng>();
 
-                    // Create a GMapRoute from the points in the MapRoute
-                    GMapRoute gmapRoute = new GMapRoute(route.Points, "My route");
+                    // Add the coordinates of your markers
+                    points1.Add(new PointLatLng(Convert.ToDouble(firstLocationX), Convert.ToDouble(firstLocationY)));
+                    points1.Add(new PointLatLng(markerX, markerY));
 
-                    // Customize the route (optional)
-                    gmapRoute.Stroke = new Pen(Color.Blue, 3);
+                    // Create a new GMapRoute using the points
+                    GMapRoute gmapRoute1 = new GMapRoute(points1, "My line 1");
 
-                    // Add the route to the routes overlay
-                    routes.Routes.Add(gmapRoute);
+                    // Customize the line (optional)
+                    gmapRoute1.Stroke = new Pen(Color.Blue, 3);
+
+                    // Add the line to the overlay
+                    routes.Routes.Add(gmapRoute1);
+
+                    // Create a new list of points for the second line
+                    List<PointLatLng> points2 = new List<PointLatLng>();
+
+                    // Add the coordinates of your markers
+                    points2.Add(new PointLatLng(markerX, markerY));
+                    points2.Add(new PointLatLng(Convert.ToDouble(secondLocationX), Convert.ToDouble(secondLocationY)));
+
+                    // Create a new GMapRoute using the points
+                    GMapRoute gmapRoute2 = new GMapRoute(points2, "My line 2");
+
+                    // Customize the line (optional)
+                    gmapRoute2.Stroke = new Pen(Color.Gray, 2);
+
+                    // Add the line to the overlay
+                    routes.Routes.Add(gmapRoute2);
 
                 }
                 catch (Exception e2)
@@ -173,57 +280,11 @@ namespace ShippingSystem
                     Console.WriteLine(e2.Message);
                 }
             }
+
             gmap.Overlays.Add(markers);
             gmap.Overlays.Add(routes);
             gmap.Zoom = 10;
             gmap.Zoom = 7;
-        }
-        public void UpdateTruckPosition(double lat1, double lng1, double lat2, double lng2, double travelTime, GMapMarker truckMarker, GMapRoute truckRoute)
-        {
-            // Assuming 'start' and 'end' are the positions of your two locations
-            PointLatLng start = new PointLatLng(lat1, lng1);
-            PointLatLng end = new PointLatLng(lat2, lng2);
-
-            // Get the current time in UTC
-            DateTime currentTime = DateTime.UtcNow;
-
-            // Parse the Start_Time from ISO 8601 format
-            DateTime Start_Time = DateTime.Parse("2024-01-10T02:55:34.829Z").ToUniversalTime();
-
-            // Calculate the elapsed time since Start_Time in minutes
-            double elapsedTime = (currentTime - Start_Time).TotalMinutes;
-            // Calculate the progress of the current trip
-            double progress = elapsedTime % travelTime;
-
-            // Determine the current direction of the truck
-            PointLatLng currentDirection;
-
-            double oneWayTime = travelTime / 2;
-            if (progress < oneWayTime)
-            {
-                // The truck is traveling from location 1 to location 2
-                currentDirection = end;
-            }
-            else
-            {
-                // The truck is traveling from location 2 to location 1
-                currentDirection = start;
-                progress = progress - 30; // Reset progress for the second half of the trip
-            }
-
-            // Calculate the current position of the truck
-            double lat = start.Lat + (currentDirection.Lat - start.Lat) * (progress / oneWayTime);
-            double lng = start.Lng + (currentDirection.Lng - start.Lng) * (progress / oneWayTime);
-            PointLatLng currentPosition = new PointLatLng(lat, lng);
-
-            // Update the position of the truck's marker
-            truckMarker.Position = currentPosition;
-
-            // Update the width of the route
-            truckRoute.Stroke.Width = (float)(3 - (3 * (progress / oneWayTime)));
-
-            // Refresh the map
-            gmap.Refresh();
         }
 
         private void InitalizeLocation()
@@ -231,29 +292,14 @@ namespace ShippingSystem
             gmap.Zoom = 7;
             gmap.Position = new PointLatLng(12.3, 104.9806);
         }
-        private void GoTo_click(object sender, EventArgs e)
-        {
-            if(Double.TryParse(latitude.Text, out double result1) && Double.TryParse(longitude.Text, out double result2))
-            {
-                gmap.Position = new PointLatLng(result1, result2);
-                gmap.Update();
-                gmap.Refresh();
 
-                latitude.Text = "";
-                longitude.Text = "";
-            }
-            else
-            {
-                MessageBox.Show("Invalid Value.");
-            }
+        private void UpdatePosition(PointLatLng point)
+        {
+            CoordinateValue.Text = Convert.ToString(gmap.Position.Lat) + ", " + Convert.ToString(gmap.Position.Lng);
         }
-
-
-
-        private void updatePosition(PointLatLng point)
+        private void UpdatePosition2()
         {
-            LatitudeValue.Text = Convert.ToString(point.Lat);
-            LongitudeValue.Text = Convert.ToString(point.Lng);
+            CoordinateValue.Text = Convert.ToString(gmap.Position.Lat) + ", " + Convert.ToString(gmap.Position.Lng);
         }
 
         static string RemoveLastCharacter(string input)
@@ -292,7 +338,5 @@ namespace ShippingSystem
             Driver driver = new Driver();
             driver.Show();
         }
-
-        
     }
 }
