@@ -195,11 +195,11 @@
     <Compile Include="AddCustomer.Designer.cs">
       <DependentUpon>AddCustomer.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddDriver.cs">
+    <Compile Include="AddTruck.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddDriver.Designer.cs">
-      <DependentUpon>AddDriver.cs</DependentUpon>
+    <Compile Include="AddTruck.Designer.cs">
+      <DependentUpon>AddTruck.cs</DependentUpon>
     </Compile>
     <Compile Include="AddOrder.cs">
       <SubType>Form</SubType>
@@ -214,11 +214,11 @@
     <Compile Include="Customer.Designer.cs">
       <DependentUpon>Customer.cs</DependentUpon>
     </Compile>
-    <Compile Include="Driver.cs">
+    <Compile Include="Truck.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Driver.Designer.cs">
-      <DependentUpon>Driver.cs</DependentUpon>
+    <Compile Include="Truck.Designer.cs">
+      <DependentUpon>Truck.cs</DependentUpon>
     </Compile>
     <Compile Include="Misc.cs" />
     <Compile Include="Overview.cs">
@@ -238,8 +238,8 @@
     <EmbeddedResource Include="AddCustomer.resx">
       <DependentUpon>AddCustomer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddDriver.resx">
-      <DependentUpon>AddDriver.cs</DependentUpon>
+    <EmbeddedResource Include="AddTruck.resx">
+      <DependentUpon>AddTruck.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddOrder.resx">
       <DependentUpon>AddOrder.cs</DependentUpon>
@@ -253,8 +253,8 @@
     <EmbeddedResource Include="Customer.resx">
       <DependentUpon>Customer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Driver.resx">
-      <DependentUpon>Driver.cs</DependentUpon>
+    <EmbeddedResource Include="Truck.resx">
+      <DependentUpon>Truck.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Overview.resx">
       <DependentUpon>Overview.cs</DependentUpon>

@@ -80,8 +80,10 @@ namespace ShippingSystem
         private void gunaButton1_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Overview overviewForm = new Overview();
-            overviewForm.Show();
+            Overview overview = new Overview();
+            overview.FormBorderStyle = FormBorderStyle.Sizable;
+            overview.WindowState = FormWindowState.Maximized;
+            overview.Show();
         }
 
         private void gunaButton8_Click(object sender, EventArgs e)
@@ -133,6 +135,8 @@ namespace ShippingSystem
         {
             this.Show();
             Tracking tracking = new Tracking();
+            tracking.FormBorderStyle = FormBorderStyle.Sizable;
+            tracking.WindowState = FormWindowState.Maximized;
             tracking.Show();
         }
 
@@ -184,6 +188,8 @@ namespace ShippingSystem
         {
             this.Hide();
             Tracking tracking = new Tracking();
+            tracking.FormBorderStyle = FormBorderStyle.Sizable;
+            tracking.WindowState = FormWindowState.Maximized;
             tracking.Show();
         }
 
@@ -195,14 +201,17 @@ namespace ShippingSystem
         private void gunaButton5_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Truck driverForm = new Truck();
-            driverForm.Show();
+            Truck truck = new Truck();
+            truck.FormBorderStyle = FormBorderStyle.Sizable;
+            truck.WindowState = FormWindowState.Maximized;
+            truck.Show();
         }
 
         private void TextToAddCustomer_Click(object sender, EventArgs e)
         {
             this.Hide();
             AddCustomer addCus = new AddCustomer();
+            addCus.FormBorderStyle = FormBorderStyle.Sizable;
             addCus.Show();
         }
     }

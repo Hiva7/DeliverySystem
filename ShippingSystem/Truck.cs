@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ShippingSystem
 {
-    public partial class Driver : Form
+    public partial class Truck : Form
     {
-        public Driver()
+        public Truck()
         {
             InitializeComponent();
         }
@@ -36,6 +36,8 @@ namespace ShippingSystem
         {
             this.Hide();
             Customer customer = new Customer();
+            customer.FormBorderStyle = FormBorderStyle.Sizable;
+            customer.WindowState = FormWindowState.Maximized;
             customer.Show();
         }
 
@@ -43,6 +45,8 @@ namespace ShippingSystem
         {
             this.Hide();
             Tracking tracking = new Tracking();
+            tracking.FormBorderStyle = FormBorderStyle.Sizable;
+            tracking.WindowState = FormWindowState.Maximized;
             tracking.Show();
         }
 
@@ -50,6 +54,8 @@ namespace ShippingSystem
         {
             this.Hide();
             Overview overview = new Overview();
+            overview.FormBorderStyle = FormBorderStyle.Sizable;
+            overview.WindowState = FormWindowState.Maximized;
             overview.Show();
         }
 
@@ -61,8 +67,9 @@ namespace ShippingSystem
         private void TextToAddDriver_Click(object sender, EventArgs e)
         {
             this.Hide();
-            AddDriver AddDriver = new AddDriver();
-            AddDriver.Show();
+            AddTruck addTruck = new AddTruck();
+            addTruck.FormBorderStyle = FormBorderStyle.Sizable;
+            addTruck.Show();
         }
     }
 }

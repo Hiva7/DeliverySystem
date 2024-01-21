@@ -21,6 +21,8 @@ namespace ShippingSystem
         {
             this.Hide();
             Overview overview = new Overview();
+            overview.FormBorderStyle = FormBorderStyle.Sizable;
+            overview.WindowState = FormWindowState.Maximized;
             overview.Show();
         }
     }

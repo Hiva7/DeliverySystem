@@ -123,10 +123,17 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="gunaDataGridView1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>282, 177</value>
+    <value>376, 218</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="gunaDataGridView1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="gunaDataGridView1.RowHeadersWidth" type="System.Int32, mscorlib">
+    <value>51</value>
   </data>
   <data name="gunaDataGridView1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>773, 554</value>
+    <value>1031, 682</value>
   </data>
   <data name="gunaDataGridView1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -292,10 +299,13 @@
 </value>
   </data>
   <data name="Update.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1061, 487</value>
+    <value>1415, 599</value>
+  </data>
+  <data name="Update.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="Update.Size" type="System.Drawing.Size, System.Drawing">
-    <value>160, 42</value>
+    <value>213, 52</value>
   </data>
   <data name="Update.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -319,10 +329,13 @@
     <value>Segoe UI, 9pt</value>
   </data>
   <data name="TextToId.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 21</value>
+    <value>24, 26</value>
+  </data>
+  <data name="TextToId.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="TextToId.Size" type="System.Drawing.Size, System.Drawing">
-    <value>263, 40</value>
+    <value>351, 49</value>
   </data>
   <data name="TextToId.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -343,10 +356,13 @@
     <value>Segoe UI, 9pt</value>
   </data>
   <data name="gunaTextBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 21</value>
+    <value>24, 26</value>
+  </data>
+  <data name="gunaTextBox2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="gunaTextBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>263, 40</value>
+    <value>351, 49</value>
   </data>
   <data name="gunaTextBox2.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -367,10 +383,13 @@
     <value>Segoe UI, 9pt</value>
   </data>
   <data name="gunaTextBox3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 21</value>
+    <value>24, 26</value>
+  </data>
+  <data name="gunaTextBox3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="gunaTextBox3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>263, 40</value>
+    <value>351, 49</value>
   </data>
   <data name="gunaTextBox3.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -393,7 +412,7 @@
   <data name="gunaPictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAfQAAAH0CAYAAADL1t+KAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wQAADsEBuJFr7QAAADt0RVh0Q29tbWVudAB4cjpkOkRBRnlhd2J6d2FnOjE3LGo6ODU3MjIwNzc3NTM4
+        wAAADsABataJCQAAADt0RVh0Q29tbWVudAB4cjpkOkRBRnlhd2J6d2FnOjE3LGo6ODU3MjIwNzc3NTM4
         NjM5NzkyLHQ6MjMxMjAxMTfyRCWBAAA/uElEQVR4Xu3deXxcZ3no8ZFlOXZsnEABY3qhwIUsJaUQaMEk
         pEAWJyHOwm1ve+9te9t7b0ugYUnifd/tOLYTJ7ZlSZYlWd7kRd73fd/XOCuEANlDUhp2Wspzn2ekMaPx
         O5pzRqOZM+/8/vh+bEtzzoxlS795zznve2JffXC2AACA4kbQAQDwAEEHAMADBB0AAA8QdAAAPEDQAQDw
@@ -670,12 +689,14 @@
 </value>
   </data>
   <data name="gunaPictureBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>63, 30</value>
+    <value>84, 37</value>
+  </data>
+  <data name="gunaPictureBox1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="gunaPictureBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 120</value>
+    <value>160, 148</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="gunaPictureBox1.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>Zoom</value>
   </data>
@@ -695,10 +716,13 @@
     <value>5</value>
   </data>
   <data name="gunaPanel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>239, 1</value>
+    <value>319, 1</value>
+  </data>
+  <data name="gunaPanel1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="gunaPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1, 800</value>
+    <value>1, 985</value>
   </data>
   <data name="gunaPanel1.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -809,10 +833,13 @@
 </value>
   </data>
   <data name="gunaButton8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>169, 678</value>
+    <value>225, 834</value>
+  </data>
+  <data name="gunaButton8.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="gunaButton8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>55, 52</value>
+    <value>73, 64</value>
   </data>
   <data name="gunaButton8.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -958,16 +985,19 @@
 </value>
   </data>
   <data name="gunaButton5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>41, 416</value>
+    <value>55, 512</value>
+  </data>
+  <data name="gunaButton5.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="gunaButton5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>139, 51</value>
+    <value>185, 63</value>
   </data>
   <data name="gunaButton5.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
   </data>
   <data name="gunaButton5.Text" xml:space="preserve">
-    <value>Driver</value>
+    <value>Truck</value>
   </data>
   <data name="&gt;&gt;gunaButton5.Name" xml:space="preserve">
     <value>gunaButton5</value>
@@ -1058,10 +1088,13 @@
 </value>
   </data>
   <data name="gunaButton4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>25, 678</value>
+    <value>33, 834</value>
+  </data>
+  <data name="gunaButton4.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="gunaButton4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>131, 52</value>
+    <value>175, 64</value>
   </data>
   <data name="gunaButton4.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -1210,10 +1243,13 @@
 </value>
   </data>
   <data name="gunaButton3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>41, 353</value>
+    <value>55, 434</value>
+  </data>
+  <data name="gunaButton3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="gunaButton3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>171, 51</value>
+    <value>228, 63</value>
   </data>
   <data name="gunaButton3.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -1373,10 +1409,13 @@
 </value>
   </data>
   <data name="gunaButton2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>53, 278</value>
+    <value>71, 342</value>
+  </data>
+  <data name="gunaButton2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="gunaButton2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>171, 51</value>
+    <value>228, 63</value>
   </data>
   <data name="gunaButton2.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -1478,10 +1517,13 @@
 </value>
   </data>
   <data name="gunaButton1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>53, 204</value>
+    <value>71, 251</value>
+  </data>
+  <data name="gunaButton1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="gunaButton1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>139, 51</value>
+    <value>185, 63</value>
   </data>
   <data name="gunaButton1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1502,13 +1544,16 @@
     <value>6</value>
   </data>
   <data name="gunaGradient2Panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 1</value>
+    <value>3, 1</value>
+  </data>
+  <data name="gunaGradient2Panel1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="gunaGradient2Panel1.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>450, 900</value>
+    <value>600, 1108</value>
   </data>
   <data name="gunaGradient2Panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>236, 800</value>
+    <value>315, 985</value>
   </data>
   <data name="gunaGradient2Panel1.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
@@ -1535,10 +1580,10 @@
     <value>25</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
+    <value>8, 16</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1484, 761</value>
+    <value>1942, 927</value>
   </data>
   <data name="TextToAddCustomer.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 13pt, style=Bold</value>
@@ -1600,10 +1645,13 @@
 </value>
   </data>
   <data name="TextToAddCustomer.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1061, 550</value>
+    <value>1415, 677</value>
+  </data>
+  <data name="TextToAddCustomer.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="TextToAddCustomer.Size" type="System.Drawing.Size, System.Drawing">
-    <value>160, 42</value>
+    <value>213, 52</value>
   </data>
   <data name="TextToAddCustomer.TabIndex" type="System.Int32, mscorlib">
     <value>23</value>
@@ -1704,10 +1752,13 @@
 </value>
   </data>
   <data name="gunaPictureBox7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1361, 20</value>
+    <value>1815, 25</value>
+  </data>
+  <data name="gunaPictureBox7.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="gunaPictureBox7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>37, 45</value>
+    <value>49, 55</value>
   </data>
   <data name="gunaPictureBox7.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>Zoom</value>
@@ -1855,10 +1906,13 @@
     <value>NoControl</value>
   </data>
   <data name="gunaPictureBox6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 5</value>
+    <value>8, 6</value>
+  </data>
+  <data name="gunaPictureBox6.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="gunaPictureBox6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>30, 30</value>
+    <value>40, 37</value>
   </data>
   <data name="gunaPictureBox6.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>Zoom</value>
@@ -1879,10 +1933,13 @@
     <value>0</value>
   </data>
   <data name="gunaGradient2Panel9.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1067, 21</value>
+    <value>1423, 26</value>
+  </data>
+  <data name="gunaGradient2Panel9.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="gunaGradient2Panel9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>43, 40</value>
+    <value>57, 49</value>
   </data>
   <data name="gunaGradient2Panel9.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>
@@ -1903,10 +1960,13 @@
     <value>Segoe UI, 9pt</value>
   </data>
   <data name="gunaTextBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 21</value>
+    <value>24, 26</value>
+  </data>
+  <data name="gunaTextBox1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="gunaTextBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1042, 40</value>
+    <value>1389, 49</value>
   </data>
   <data name="gunaTextBox1.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -1924,10 +1984,13 @@
     <value>1</value>
   </data>
   <data name="gunaGradient2Panel8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>282, 93</value>
+    <value>376, 114</value>
+  </data>
+  <data name="gunaGradient2Panel8.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="gunaGradient2Panel8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1124, 78</value>
+    <value>1499, 96</value>
   </data>
   <data name="gunaGradient2Panel8.TabIndex" type="System.Int32, mscorlib">
     <value>21</value>
@@ -1951,10 +2014,13 @@
     <value>Segoe UI, 15pt, style=Bold</value>
   </data>
   <data name="gunaLabel4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>66, 6</value>
+    <value>88, 7</value>
+  </data>
+  <data name="gunaLabel4.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="gunaLabel4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>48, 28</value>
+    <value>57, 35</value>
   </data>
   <data name="gunaLabel4.TabIndex" type="System.Int32, mscorlib">
     <value>24</value>
@@ -2100,10 +2166,13 @@
 </value>
   </data>
   <data name="gunaPictureBox5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>120, 8</value>
+    <value>160, 10</value>
+  </data>
+  <data name="gunaPictureBox5.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="gunaPictureBox5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>25, 25</value>
+    <value>33, 31</value>
   </data>
   <data name="gunaPictureBox5.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>Zoom</value>
@@ -2133,10 +2202,13 @@
     <value>NoControl</value>
   </data>
   <data name="gunaLabel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 8</value>
+    <value>7, 10</value>
+  </data>
+  <data name="gunaLabel2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="gunaLabel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>69, 25</value>
+    <value>82, 30</value>
   </data>
   <data name="gunaLabel2.TabIndex" type="System.Int32, mscorlib">
     <value>21</value>
@@ -2157,10 +2229,13 @@
     <value>2</value>
   </data>
   <data name="gunaGradient2Panel7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1246, 550</value>
+    <value>1661, 677</value>
+  </data>
+  <data name="gunaGradient2Panel7.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="gunaGradient2Panel7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>160, 42</value>
+    <value>213, 52</value>
   </data>
   <data name="gunaGradient2Panel7.TabIndex" type="System.Int32, mscorlib">
     <value>20</value>
@@ -2257,10 +2332,13 @@
 </value>
   </data>
   <data name="gunaButton7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1246, 487</value>
+    <value>1661, 599</value>
+  </data>
+  <data name="gunaButton7.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="gunaButton7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>160, 42</value>
+    <value>213, 52</value>
   </data>
   <data name="gunaButton7.TabIndex" type="System.Int32, mscorlib">
     <value>19</value>
@@ -2365,10 +2443,13 @@
     <value>NoControl</value>
   </data>
   <data name="gunaPictureBox4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 5</value>
+    <value>7, 6</value>
+  </data>
+  <data name="gunaPictureBox4.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="gunaPictureBox4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>30, 30</value>
+    <value>40, 37</value>
   </data>
   <data name="gunaPictureBox4.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>Zoom</value>
@@ -2389,10 +2470,13 @@
     <value>0</value>
   </data>
   <data name="gunaGradient2Panel6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>287, 21</value>
+    <value>383, 26</value>
+  </data>
+  <data name="gunaGradient2Panel6.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="gunaGradient2Panel6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>43, 40</value>
+    <value>57, 49</value>
   </data>
   <data name="gunaGradient2Panel6.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>
@@ -2410,10 +2494,13 @@
     <value>0</value>
   </data>
   <data name="gunaGradient2Panel5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1061, 390</value>
+    <value>1415, 480</value>
+  </data>
+  <data name="gunaGradient2Panel5.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="gunaGradient2Panel5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>345, 78</value>
+    <value>460, 96</value>
   </data>
   <data name="gunaGradient2Panel5.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
@@ -2548,8 +2635,11 @@
   <data name="gunaPictureBox3.Location" type="System.Drawing.Point, System.Drawing">
     <value>1, 1</value>
   </data>
+  <data name="gunaPictureBox3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
   <data name="gunaPictureBox3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>42, 40</value>
+    <value>56, 49</value>
   </data>
   <data name="gunaPictureBox3.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>Zoom</value>
@@ -2570,10 +2660,13 @@
     <value>0</value>
   </data>
   <data name="gunaGradient2Panel4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>287, 21</value>
+    <value>383, 26</value>
+  </data>
+  <data name="gunaGradient2Panel4.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="gunaGradient2Panel4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>43, 40</value>
+    <value>57, 49</value>
   </data>
   <data name="gunaGradient2Panel4.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>
@@ -2591,10 +2684,13 @@
     <value>0</value>
   </data>
   <data name="gunaGradient2Panel3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1061, 283</value>
+    <value>1415, 348</value>
+  </data>
+  <data name="gunaGradient2Panel3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="gunaGradient2Panel3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>345, 78</value>
+    <value>460, 96</value>
   </data>
   <data name="gunaGradient2Panel3.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>
@@ -2698,8 +2794,11 @@
   <data name="gunaPictureBox2.Location" type="System.Drawing.Point, System.Drawing">
     <value>1, 1</value>
   </data>
+  <data name="gunaPictureBox2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
   <data name="gunaPictureBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>42, 40</value>
+    <value>56, 49</value>
   </data>
   <data name="gunaPictureBox2.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>Zoom</value>
@@ -2720,10 +2819,13 @@
     <value>0</value>
   </data>
   <data name="idText.Location" type="System.Drawing.Point, System.Drawing">
-    <value>287, 21</value>
+    <value>383, 26</value>
+  </data>
+  <data name="idText.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="idText.Size" type="System.Drawing.Size, System.Drawing">
-    <value>43, 40</value>
+    <value>57, 49</value>
   </data>
   <data name="idText.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>
@@ -2741,10 +2843,13 @@
     <value>0</value>
   </data>
   <data name="gunaGradient2Panel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1061, 177</value>
+    <value>1415, 218</value>
+  </data>
+  <data name="gunaGradient2Panel2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="gunaGradient2Panel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>345, 78</value>
+    <value>460, 96</value>
   </data>
   <data name="gunaGradient2Panel2.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -2768,10 +2873,13 @@
     <value>Segoe UI, 21.75pt, style=Bold</value>
   </data>
   <data name="gunaLabel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>288, 36</value>
+    <value>384, 44</value>
+  </data>
+  <data name="gunaLabel1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="gunaLabel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>150, 40</value>
+    <value>189, 50</value>
   </data>
   <data name="gunaLabel1.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
@@ -2794,7 +2902,7 @@
   <data name="gunaCirclePictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAG0AAABtCAYAAACr+O9WAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EAAACxABrSO9dQAABINJREFUeF7tnf2R2jAQxSkhJdw/mTmQmaEEQQUpIR2EDo4OoAPSAemAEq6ElEAJ
+        DwAACw8BkvkDpQAABINJREFUeF7tnf2R2jAQxSkhJdw/mTmQmaEEQQUpIR2EDo4OoAPSAemAEq6ElEAJ
         ya4s3/GxHLaR7F37vZnfZOYwxtazVqu1Yk+s6eXFf3stvHfOr51bbenfvSuWRzdf/g0Uy383fH52nBWr
         Q/zemvfD+4u7hlLp+8wvuIFDY98z5Vlov6WZfs2/F38aqqvPnrTaFvPlSWzk3PDF4Vb76dz/iIcFSerd
         qHtEA/n44qGOW9yrZjP/kxrneNNYOnnn442HPy4Fs4rVm7peVRceA8dkXlH4X2bNumbo5oUxi8cH6eSt
@@ -2817,10 +2925,13 @@
 </value>
   </data>
   <data name="gunaCirclePictureBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1347, 12</value>
+    <value>1796, 15</value>
+  </data>
+  <data name="gunaCirclePictureBox1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="gunaCirclePictureBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>59, 64</value>
+    <value>79, 79</value>
   </data>
   <data name="gunaCirclePictureBox1.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>Zoom</value>
@@ -3077,8 +3188,11 @@
         WAwAFovFAGCxWA7Q/wJcWwt0FpCWZgAAAABJRU5ErkJggg==
 </value>
   </data>
+  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
   <data name="$this.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1500, 800</value>
+    <value>2000, 985</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>

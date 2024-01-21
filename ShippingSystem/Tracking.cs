@@ -322,6 +322,8 @@ namespace ShippingSystem
         {
             this.Hide();
             Overview overview = new Overview();
+            overview.FormBorderStyle = FormBorderStyle.Sizable;
+            overview.WindowState = FormWindowState.Maximized;
             overview.Show();
         }
 
@@ -329,14 +331,18 @@ namespace ShippingSystem
         {
             this.Hide();
             Customer customer = new Customer();
+            customer.FormBorderStyle = FormBorderStyle.Sizable;
+            customer.WindowState = FormWindowState.Maximized;
             customer.Show();
         }
 
         private void gunaButton5_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Driver driver = new Driver();
-            driver.Show();
+            Truck truck = new Truck();
+            truck.FormBorderStyle = FormBorderStyle.Sizable;
+            truck.WindowState = FormWindowState.Maximized;
+            truck.Show();
         }
     }
 }

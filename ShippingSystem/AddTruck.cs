@@ -25,8 +25,15 @@ namespace ShippingSystem
         private void gunaButton8_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Truck driver = new Truck();
-            driver.Show();
+            Truck truck = new Truck();
+            truck.FormBorderStyle = FormBorderStyle.Sizable;
+            truck.WindowState = FormWindowState.Maximized;
+            truck.Show();
+        }
+
+        private void gunaLabel5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

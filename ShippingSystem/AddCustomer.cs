@@ -22,6 +22,8 @@ namespace ShippingSystem
         {
             this.Hide();
             Customer customer = new Customer();
+            customer.FormBorderStyle = FormBorderStyle.Sizable;
+            customer.WindowState = FormWindowState.Maximized;
             customer.Show();
         }
 

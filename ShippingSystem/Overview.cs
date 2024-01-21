@@ -53,10 +53,10 @@ namespace ShippingSystem
         private void gunaButton5_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Driver driver = new Driver();
-            driver.FormBorderStyle = FormBorderStyle.Sizable;
-            driver.WindowState = FormWindowState.Maximized;
-            driver.Show();
+            Truck truck = new Truck();
+            truck.FormBorderStyle = FormBorderStyle.Sizable;
+            truck.WindowState = FormWindowState.Maximized;
+            truck.Show();
         }
 
         private void Overview_Load(object sender, EventArgs e)
