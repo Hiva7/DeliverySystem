@@ -12,9 +12,11 @@ namespace ShippingSystem
 {
     public partial class Truck : Form
     {
+        Database db = new Database("mongodb+srv://Hiva:Hiva404@cluster0.4nn0wuf.mongodb.net/", "DeliverySystem");
         public Truck()
         {
-            InitializeComponent();
+            InitializeComponent();  
+            TotalTruck.Text = db.GetLatestID("Truck").ToString();
         }
 
         private void Driver_Load(object sender, EventArgs e)
@@ -36,7 +38,6 @@ namespace ShippingSystem
         {
             this.Hide();
             Customer customer = new Customer();
-            customer.FormBorderStyle = FormBorderStyle.Sizable;
             customer.WindowState = FormWindowState.Maximized;
             customer.Show();
         }
@@ -45,7 +46,6 @@ namespace ShippingSystem
         {
             this.Hide();
             Tracking tracking = new Tracking();
-            tracking.FormBorderStyle = FormBorderStyle.Sizable;
             tracking.WindowState = FormWindowState.Maximized;
             tracking.Show();
         }
@@ -54,7 +54,6 @@ namespace ShippingSystem
         {
             this.Hide();
             Overview overview = new Overview();
-            overview.FormBorderStyle = FormBorderStyle.Sizable;
             overview.WindowState = FormWindowState.Maximized;
             overview.Show();
         }
@@ -68,7 +67,6 @@ namespace ShippingSystem
         {
             this.Hide();
             AddTruck addTruck = new AddTruck();
-            addTruck.FormBorderStyle = FormBorderStyle.Sizable;
             addTruck.Show();
         }
     }

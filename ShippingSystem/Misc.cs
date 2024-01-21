@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MongoDB.Bson;
+using System.Windows.Forms;
+using Guna.UI.WinForms;
 
 namespace ShippingSystem
 {
@@ -52,6 +55,53 @@ namespace ShippingSystem
             {
                 // Throw a FormatException if the format is incorrect
                 throw new FormatException("Invalid format. Expected format: 'Key: Value'");
+            }
+        }
+        public static void SetPlaceholder(GunaTextBox textBox, string placeholderText)
+        {
+            textBox.Text = placeholderText;
+            textBox.ForeColor = Color.Black;
+
+            textBox.GotFocus += RemoveText(placeholderText);
+            textBox.LostFocus += AddText(placeholderText);
+        }
+
+        public static EventHandler RemoveText(string placeholderText)
+        {
+            return (sender, e) =>
+            {
+                GunaTextBox textBox = sender as GunaTextBox;
+                if (textBox.Text == placeholderText)
+                {
+                    textBox.Text = "";
+                    textBox.ForeColor = Color.Black;
+                }
+            };
+        }
+
+        public static EventHandler AddText(string placeholderText)
+        {
+            return (sender, e) =>
+            {
+                GunaTextBox textBox = sender as GunaTextBox;
+                if (string.IsNullOrWhiteSpace(textBox.Text))
+                    textBox.Text = placeholderText;
+            };
+        }
+        public static void ClearTextBoxes(Control control)
+        {
+            foreach (Control c in control.Controls)
+            {
+                if (c is GunaTextBox)
+                {
+                    ((GunaTextBox)c).Text = "";
+                    c.Focus();
+                    control.Focus();
+                }
+                else
+                {
+                    ClearTextBoxes(c);
+                }
             }
         }
     }

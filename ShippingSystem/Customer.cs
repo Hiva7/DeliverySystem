@@ -81,7 +81,6 @@ namespace ShippingSystem
         {
             this.Hide();
             Overview overview = new Overview();
-            overview.FormBorderStyle = FormBorderStyle.Sizable;
             overview.WindowState = FormWindowState.Maximized;
             overview.Show();
         }
@@ -135,7 +134,6 @@ namespace ShippingSystem
         {
             this.Show();
             Tracking tracking = new Tracking();
-            tracking.FormBorderStyle = FormBorderStyle.Sizable;
             tracking.WindowState = FormWindowState.Maximized;
             tracking.Show();
         }
@@ -188,7 +186,6 @@ namespace ShippingSystem
         {
             this.Hide();
             Tracking tracking = new Tracking();
-            tracking.FormBorderStyle = FormBorderStyle.Sizable;
             tracking.WindowState = FormWindowState.Maximized;
             tracking.Show();
         }
@@ -202,7 +199,6 @@ namespace ShippingSystem
         {
             this.Hide();
             Truck truck = new Truck();
-            truck.FormBorderStyle = FormBorderStyle.Sizable;
             truck.WindowState = FormWindowState.Maximized;
             truck.Show();
         }
@@ -211,7 +207,6 @@ namespace ShippingSystem
         {
             this.Hide();
             AddCustomer addCus = new AddCustomer();
-            addCus.FormBorderStyle = FormBorderStyle.Sizable;
             addCus.Show();
         }
     }

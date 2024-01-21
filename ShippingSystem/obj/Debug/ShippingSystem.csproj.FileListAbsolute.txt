@@ -128,10 +128,8 @@ C:\Users\User\Documents\School\Coding\dotnet\dotnet1\ShippingSystem\ShippingSyst
 C:\Users\User\Documents\School\Coding\dotnet\dotnet1\ShippingSystem\ShippingSystem\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\User\Documents\School\Coding\dotnet\dotnet1\ShippingSystem\ShippingSystem\obj\Debug\ShippingSystem.csproj.AssemblyReference.cache
 C:\Users\User\Documents\School\Coding\dotnet\dotnet1\ShippingSystem\ShippingSystem\obj\Debug\ShippingSystem.AddCustomer.resources
-C:\Users\User\Documents\School\Coding\dotnet\dotnet1\ShippingSystem\ShippingSystem\obj\Debug\ShippingSystem.AddDriver.resources
 C:\Users\User\Documents\School\Coding\dotnet\dotnet1\ShippingSystem\ShippingSystem\obj\Debug\ShippingSystem.AddOrder.resources
 C:\Users\User\Documents\School\Coding\dotnet\dotnet1\ShippingSystem\ShippingSystem\obj\Debug\ShippingSystem.Customer.resources
-C:\Users\User\Documents\School\Coding\dotnet\dotnet1\ShippingSystem\ShippingSystem\obj\Debug\ShippingSystem.Driver.resources
 C:\Users\User\Documents\School\Coding\dotnet\dotnet1\ShippingSystem\ShippingSystem\obj\Debug\ShippingSystem.Overview.resources
 C:\Users\User\Documents\School\Coding\dotnet\dotnet1\ShippingSystem\ShippingSystem\obj\Debug\ShippingSystem.Properties.Resources.resources
 C:\Users\User\Documents\School\Coding\dotnet\dotnet1\ShippingSystem\ShippingSystem\obj\Debug\ShippingSystem.Tracking.resources
@@ -144,3 +142,5 @@ C:\Users\User\Documents\School\Coding\dotnet\dotnet1\ShippingSystem\ShippingSyst
 C:\Users\User\Documents\School\Coding\dotnet\dotnet1\ShippingSystem\ShippingSystem\obj\Debug\ShippingSystem.csproj.CopyComplete
 C:\Users\User\Documents\School\Coding\dotnet\dotnet1\ShippingSystem\ShippingSystem\obj\Debug\ShippingSystem.exe
 C:\Users\User\Documents\School\Coding\dotnet\dotnet1\ShippingSystem\ShippingSystem\obj\Debug\ShippingSystem.pdb
+C:\Users\User\Documents\School\Coding\dotnet\dotnet1\ShippingSystem\ShippingSystem\obj\Debug\ShippingSystem.AddTruck.resources
+C:\Users\User\Documents\School\Coding\dotnet\dotnet1\ShippingSystem\ShippingSystem\obj\Debug\ShippingSystem.Truck.resources

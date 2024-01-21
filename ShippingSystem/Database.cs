@@ -46,9 +46,9 @@ public class Database
                 "Truck",
                 new Dictionary<string, BsonType>
                 {
-                    { "Start_Time", BsonType.DateTime},
-                    { "Travel_Time", BsonType.Decimal128},
-                    { "Location_id", BsonType.Array}
+                    { "Start_Time", BsonType.DateTime },
+                    { "Travel_Time", BsonType.Decimal128 },
+                    { "Location_id", BsonType.Array }
                 }
             },
             {

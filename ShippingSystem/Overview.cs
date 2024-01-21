@@ -16,18 +16,17 @@ namespace ShippingSystem
         public Overview()
         {
             InitializeComponent();
-        }
-
-        private void gunaButton3_Click(object sender, EventArgs e)
-        {
-
+            this.WindowState = FormWindowState.Maximized;
+            Database db = new Database("mongodb+srv://Hiva:Hiva404@cluster0.4nn0wuf.mongodb.net/", "DeliverySystem");
+            TotalCustomer.Text = db.GetLatestID("Customer").ToString();
+            TotalTruck.Text = db.GetLatestID("Truck").ToString();
+            TotalOrder.Text = db.GetLatestID("Order").ToString();
         }
 
         private void gunaButton3_Click_1(object sender, EventArgs e)
         {
             this.Hide();
             Customer customer = new Customer();
-            customer.FormBorderStyle = FormBorderStyle.Sizable;
             customer.WindowState = FormWindowState.Maximized;
             customer.Show();
         }
@@ -45,7 +44,6 @@ namespace ShippingSystem
         {
             this.Hide();
             Tracking tracking = new Tracking();
-            tracking.FormBorderStyle = FormBorderStyle.Sizable;
             tracking.WindowState = FormWindowState.Maximized;
             tracking.Show();
         }
@@ -54,7 +52,6 @@ namespace ShippingSystem
         {
             this.Hide();
             Truck truck = new Truck();
-            truck.FormBorderStyle = FormBorderStyle.Sizable;
             truck.WindowState = FormWindowState.Maximized;
             truck.Show();
         }
@@ -64,17 +61,21 @@ namespace ShippingSystem
 
         }
 
-        private void gunaGradientCircleButton1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void gunaPictureBox6_Click(object sender, EventArgs e)
         {
             this.Hide();
             AddOrder addOrder = new AddOrder();
-            addOrder.FormBorderStyle = FormBorderStyle.Sizable;
             addOrder.Show();
+        }
+
+        private void gunaGradient2Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void gunaGradient2Panel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
