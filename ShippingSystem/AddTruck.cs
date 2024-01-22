@@ -36,7 +36,7 @@ namespace ShippingSystem
         {
             Misc.ClearTextBoxes(this);
         }
-        private void TextToAddDriver_Click(object sender, EventArgs e)
+        private void Add_Click(object sender, EventArgs e)
         {
             try
             {
@@ -45,13 +45,13 @@ namespace ShippingSystem
                 {
                     var travelTime = new BsonDecimal128(travelTimeDecimal);
                     db.AddRecord(
-                        "Truck",
-                        new BsonDocument
-                        {
-                    { "Start_Time", DateTime.Now },
-                    { "Travel_Time", travelTime }
-                        },
-                        new BsonDocument { { "Location_id", new BsonArray(new[] { int.Parse(LocationOne.Text), int.Parse(LocationTwo.Text) }) } }
+                    "Truck",
+                    new BsonDocument
+                    {
+                        { "Start_Time", DateTime.Now },
+                        { "Travel_Time", travelTime }
+                    },
+                    new BsonDocument { { "Location_id", new BsonArray(new[] { int.Parse(LocationOne.Text), int.Parse(LocationTwo.Text) }) } }
                     );
                 }
                 else
@@ -59,28 +59,12 @@ namespace ShippingSystem
                     MessageBox.Show("Invalid travel time");
                 }
                 TotalTruck.Text = db.GetLatestID("Truck").ToString();
+                Misc.ClearTextBoxes(this);
             }
             catch (Exception error)
             {
                 MessageBox.Show(error.Message);
             }
-        }
-
-
-
-        private void AddDriver_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void gunaLabel5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void gunaGradient2Panel10_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }

@@ -37,8 +37,8 @@ public class Database
                 "Customer",
                 new Dictionary<string, BsonType>
                 {
-                    { "First_name", BsonType.String },
-                    { "Last_name", BsonType.String },
+                    { "First_Name", BsonType.String },
+                    { "Last_Name", BsonType.String },
                     { "Contact", BsonType.String }
                 }
             },
@@ -64,12 +64,10 @@ public class Database
                 "Order",
                 new Dictionary<string, BsonType>
                 {
-                    { "Name", BsonType.String },
-                    { "Weight", BsonType.Decimal128 },
                     { "Status", BsonType.String },
                     { "Price", BsonType.Decimal128 },
                     { "Customer_id", BsonType.Int32 },
-                    { "Truck_id", BsonType.Int32 }
+                    { "Location_id", BsonType.Array }
                 }
             }
         };
