@@ -190,24 +190,25 @@ public class Database
         return 0;
     }
 
-    public List<BsonDocument> SearchRecord<T>(string myCollection, string myField, T myQuery)
+    public List<BsonDocument> SearchRecord(string myCollection, string myField, object myQuery)
     {
         var collection = database.GetCollection<BsonDocument>(myCollection);
         if (collection is null)
         {
             throw new Exception("Collection not found");
         }
-        var filter = Builders<BsonDocument>.Filter.Eq(myField, myQuery);
-        var documents = collection.Find(filter).ToList();
 
         List<BsonDocument> matchedDocuments = new List<BsonDocument>();
+        var documents = collection.Find(new BsonDocument()).ToList(); // Get all documents
+
         foreach (var document in documents)
         {
-            if (document.Contains(myField))
+            if (document.Contains(myField) && document[myField].ToString() == myQuery.ToString())
             {
                 matchedDocuments.Add(document);
             }
         }
+
         if (matchedDocuments.Count == 0)
         {
             Console.WriteLine("No matched documents");
@@ -215,6 +216,7 @@ public class Database
 
         return matchedDocuments;
     }
+
 
 
     public void AddRecord(string myCollection, BsonDocument myRecord)
