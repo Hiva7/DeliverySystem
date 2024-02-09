@@ -18,8 +18,9 @@ namespace ShippingSystem
         {
             InitializeComponent();
             TotalOrder.Text = db.GetLatestID("Order").ToString();
-            Misc.SetPlaceholder(LocationOne, "Enter Starting Point...");
-            Misc.SetPlaceholder(LocationTwo, "Enter Destination...");
+            Misc.SetPlaceholder(CustomerID, "Enter Customer ID...");
+            Misc.SetPlaceholder(LocationOne, "Enter Starting Point ID...");
+            Misc.SetPlaceholder(LocationTwo, "Enter Destination ID...");
             Misc.SetPlaceholder(Price, "Enter Cost($)...");
         }
 
@@ -49,9 +50,13 @@ namespace ShippingSystem
                     new BsonDocument
                     {
                         { "Status", "Pending" },
+                        { "Start_Time", DateTime.Now },
                         { "Price",  price }
                     },
-                    new BsonDocument { { "Location_id", new BsonArray(new[] { int.Parse(LocationOne.Text), int.Parse(LocationTwo.Text) }) } }
+                    new BsonDocument 
+                    {
+                        { "Customer_id", int.Parse(CustomerID.Text) },
+                        { "Location_id", new BsonArray(new[] { int.Parse(LocationOne.Text), int.Parse(LocationTwo.Text) }) } }
                     );
                 }
                 else
@@ -65,6 +70,11 @@ namespace ShippingSystem
             {
                 MessageBox.Show(error.Message);
             }
+        }
+
+        private void gunaPictureBox2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

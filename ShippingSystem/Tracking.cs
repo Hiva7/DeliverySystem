@@ -14,6 +14,7 @@ using GMap.NET.WindowsForms;
 using GMap.NET.WindowsForms.Markers;
 using MongoDB.Bson;
 using System.Runtime.InteropServices;
+using static GMap.NET.Entity.OpenStreetMapRouteEntity;
 
 namespace ShippingSystem
 {
@@ -21,6 +22,7 @@ namespace ShippingSystem
     {
         private Database db;
         GMap.NET.WindowsForms.GMapControl gmap;
+        readonly String coll = "Order";
 
         public Tracking()
         {
@@ -56,13 +58,7 @@ namespace ShippingSystem
         }
         public void Tracking_Load(object sender, EventArgs e)
         {
-            String coll = "Order";
-            var data = db.GetCollection(coll); // Assuming this returns List<BsonDocument>
-
-            DataTable dataTable = Misc.ToDataTable(data);
-
-            // Assuming dataGridView1 is the name of your DataGridView control
-            gunaDataGridView1.DataSource = dataTable;
+            RefreshDataGridView(coll);
 
             String coll2 = "Truck";
             var data2 = db.GetField(coll2, "Location_id");
@@ -341,5 +337,214 @@ namespace ShippingSystem
             truck.WindowState = FormWindowState.Maximized;
             truck.Show();
         }
+
+        private void gunaButton6_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Location location = new Location();
+            location.WindowState = FormWindowState.Maximized;
+            location.Show();
+        }
+
+        private void RefreshDataGridView(String collection)
+        {
+            var data = db.GetCollection(collection); // Assuming this returns List<BsonDocument>
+
+            // Create a new DataTable
+            DataTable dataTable = new DataTable();
+
+            
+
+            // Add the data to the DataTable
+            try
+            {
+                AddHeader(ref dataTable);
+                foreach (var document in data)
+                {
+                    // Only add the row to the DataTable if the Status is not 'Complete'
+                    if (document["Status"].AsString != "Complete")
+                    {
+                        dataTable.Rows.Add(document.Values.ToArray());
+                    }
+                }
+            }
+            catch(Exception error)
+            {
+                Console.WriteLine(error.Message);
+            }
+            
+
+            // Assuming Data is the name of your GunaDataGridView control
+            Data.DataSource = dataTable;
+
+            // Hide the header row
+            Data.ColumnHeadersVisible = false;
+        }
+
+
+        private void AddHeader(ref DataTable dataTable)
+        {
+            var data = db.GetCollection(coll);
+
+            // Add columns to the DataTable
+            foreach (var key in data[0].Names)
+            {
+                dataTable.Columns.Add(key);
+            }
+
+            // Add a new row with the attribute names
+            dataTable.Rows.Add(dataTable.Columns.Cast<DataColumn>().Select(c => c.ColumnName).ToArray());
+        }
+
+        private void Data_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Ensure a row is clicked (not the header)
+            if (e.RowIndex >= 1)
+            {
+                var location_id_string = Data.Rows[e.RowIndex].Cells["Location_id"].Value.ToString();
+                var location_id = MongoDB.Bson.Serialization.BsonSerializer.Deserialize<BsonArray>(location_id_string);
+
+                var order_id = int.Parse(Data.Rows[e.RowIndex].Cells["Order_id"].Value.ToString());
+
+                YourFunction(order_id, location_id);
+            }
+        }
+
+
+        private void YourFunction(int order_id, BsonArray location_id)
+        {
+
+            gmap.Overlays.Clear();
+            // Get the Truck data from the Truck collection
+            String coll = "Truck";
+            var truckData = db.SearchRecord(coll, "Location_id", location_id);
+
+            GMapOverlay markers = new GMapOverlay("markers");
+            GMapOverlay routes = new GMapOverlay("routes");
+
+            // Check if there's a Truck with the same Location_id value in the Truck collection
+            if (truckData.Any())
+            {
+                // If there's a Truck, mark the truck based on the percentage value system
+                // and the locations the truck is traveling to and from
+
+                // Your existing code for marking the truck goes here
+                // ...
+
+                // Get the current time in UTC
+                DateTime currentTime = DateTime.UtcNow;
+
+                // Get the start time and travel time from the truck data
+                DateTime startTime = truckData[0]["Start_Time"].ToUniversalTime();
+                double travelTime = (double)truckData[0]["Travel_Time"].AsDecimal128;
+
+                // Calculate the difference in seconds between the current time and the start time
+                double timeDifference = (currentTime - startTime).TotalSeconds;
+
+                // Calculate the current position
+                double currentPosition = timeDifference % (travelTime - 2);
+
+                // Calculate the percentage of the trip completed
+                double percentageCompleted = currentPosition / travelTime;
+
+                // Get the location data from the Location collection
+                String coll3 = "Location";
+                var firstLocation = db.SearchRecord(coll3, "Location_id", Convert.ToInt32(location_id[0]));
+                var secondLocation = db.SearchRecord(coll3, "Location_id", Convert.ToInt32(location_id[1]));
+
+                // Get the coordinates of the first and second locations
+                double firstLocationX = Convert.ToDouble(firstLocation[0]["CordX"]);
+                double firstLocationY = Convert.ToDouble(firstLocation[0]["CordY"]);
+                double secondLocationX = Convert.ToDouble(secondLocation[0]["CordX"]);
+                double secondLocationY = Convert.ToDouble(secondLocation[0]["CordY"]);
+
+                // Calculate the position of the marker
+                double markerX, markerY;
+
+                if (percentageCompleted <= 0.5)
+                {
+                    // The marker is on the first half of the trip
+                    percentageCompleted *= 2; // Adjust the percentage to be out of 100 for the first half
+                    markerX = firstLocationX + (secondLocationX - firstLocationX) * percentageCompleted;
+                    markerY = firstLocationY + (secondLocationY - firstLocationY) * percentageCompleted;
+                }
+                else
+                {
+                    // The marker is on the second half of the trip
+                    percentageCompleted = (percentageCompleted - 0.5) * 2; // Adjust the percentage to be out of 100 for the second half
+                    markerX = secondLocationX + (firstLocationX - secondLocationX) * percentageCompleted;
+                    markerY = secondLocationY + (firstLocationY - secondLocationY) * percentageCompleted;
+                }
+
+                // Create a Bitmap
+                Bitmap bmpMarker = new Bitmap(20, 20);
+
+                using (Graphics g = Graphics.FromImage(bmpMarker))
+                {
+                    // Draw a lime circle
+                    g.FillEllipse(Brushes.Lime, 0, 0, bmpMarker.Width, bmpMarker.Height);
+
+                    // Draw a border
+                    Pen borderPen = new Pen(Color.Black, 2); // Change the color and width as needed
+                    g.DrawEllipse(borderPen, 1, 1, bmpMarker.Width - 2, bmpMarker.Height - 2);
+                }
+
+                // Create a custom marker with an offset
+                GMarkerGoogle markerTruck = new GMarkerGoogle(new PointLatLng(markerX, markerY), bmpMarker)
+                {
+                    Offset = new Point(-10, -10) // Adjust these values as needed
+                };
+
+                GMapMarker marker1 = new GMarkerGoogle(new PointLatLng(firstLocationX, firstLocationY), GMarkerGoogleType.red);
+                GMapMarker marker2 = new GMarkerGoogle(new PointLatLng(secondLocationX, secondLocationY), GMarkerGoogleType.red);
+
+                markers.Markers.Add(markerTruck);
+                markers.Markers.Add(marker1);
+                markers.Markers.Add(marker2);
+
+                // Create a new list of points for the first line
+                List<PointLatLng> points1 = new List<PointLatLng>();
+
+                // Add the coordinates of your markers
+                points1.Add(new PointLatLng(firstLocationX, firstLocationY));
+                points1.Add(new PointLatLng(markerX, markerY));
+
+                // Create a new GMapRoute using the points
+                GMapRoute gmapRoute1 = new GMapRoute(points1, "My line 1");
+
+                // Customize the line (optional)
+                gmapRoute1.Stroke = new Pen(Color.Blue, 3);
+
+                // Add the line to the overlay
+                routes.Routes.Add(gmapRoute1);
+
+                // Create a new list of points for the second line
+                List<PointLatLng> points2 = new List<PointLatLng>();
+
+                // Add the coordinates of your markers
+                points2.Add(new PointLatLng(markerX, markerY));
+                points2.Add(new PointLatLng(secondLocationX, secondLocationY));
+
+                // Create a new GMapRoute using the points
+                GMapRoute gmapRoute2 = new GMapRoute(points2, "My line 2");
+
+                // Customize the line (optional)
+                gmapRoute2.Stroke = new Pen(Color.Gray, 2);
+
+                // Add the line to the overlay
+                routes.Routes.Add(gmapRoute2);
+
+                gmap.Overlays.Add(markers);
+                gmap.Overlays.Add(routes);
+                gmap.Zoom = 10;
+                gmap.Zoom = 7;
+            }
+            else
+            {
+                // Handle the case where there's no Truck with the same Location_id value in the Truck collection
+                Console.WriteLine($"No Truck found with Location_id: {location_id}");
+            }
+        }
+
     }
 }

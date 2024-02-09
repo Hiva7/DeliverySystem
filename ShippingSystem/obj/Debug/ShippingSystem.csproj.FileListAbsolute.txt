@@ -144,3 +144,6 @@ C:\Users\User\Documents\School\Coding\dotnet\dotnet1\ShippingSystem\ShippingSyst
 C:\Users\User\Documents\School\Coding\dotnet\dotnet1\ShippingSystem\ShippingSystem\obj\Debug\ShippingSystem.pdb
 C:\Users\User\Documents\School\Coding\dotnet\dotnet1\ShippingSystem\ShippingSystem\obj\Debug\ShippingSystem.AddTruck.resources
 C:\Users\User\Documents\School\Coding\dotnet\dotnet1\ShippingSystem\ShippingSystem\obj\Debug\ShippingSystem.Truck.resources
+C:\Users\User\Documents\School\Coding\dotnet\dotnet1\ShippingSystem\ShippingSystem\obj\Debug\ShippingSystem.Location.resources
+C:\Users\User\Documents\School\Coding\dotnet\dotnet1\ShippingSystem\ShippingSystem\obj\Debug\ShippingSystem.Location.aa-DJ.resources
+C:\Users\User\Documents\School\Coding\dotnet\dotnet1\ShippingSystem\ShippingSystem\obj\Debug\ShippingSystem.Location.en-GB.resources

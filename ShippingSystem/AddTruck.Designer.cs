@@ -415,7 +415,7 @@
             this.gunaPictureBox3.BaseColor = System.Drawing.Color.White;
             this.gunaPictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("gunaPictureBox3.Image")));
             this.gunaPictureBox3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.gunaPictureBox3.Location = new System.Drawing.Point(9, 0);
+            this.gunaPictureBox3.Location = new System.Drawing.Point(4, 0);
             this.gunaPictureBox3.Margin = new System.Windows.Forms.Padding(4);
             this.gunaPictureBox3.Name = "gunaPictureBox3";
             this.gunaPictureBox3.Size = new System.Drawing.Size(47, 47);

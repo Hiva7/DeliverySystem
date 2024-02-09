@@ -15,7 +15,8 @@ namespace ShippingSystem
 
     public partial class Customer : Form
     {
-        private Database db;
+        readonly private Database db;
+        readonly String coll = "Customer";
 
         public Customer()
         {
@@ -25,57 +26,60 @@ namespace ShippingSystem
 
         private void Overview_Load(object sender, EventArgs e)
         {
-            String coll = "Customer";
-            var data = db.GetCollection(coll); // Assuming this returns List<BsonDocument>
+            RefreshDataGridView(coll);
 
-            // Convert List<BsonDocument> to DataTable
-            DataTable dataTable = Misc.ToDataTable(data);
+            TotalCustomer.Text = db.GetLatestID(coll).ToString();
 
-            // Assuming dataGridView1 is the name of your DataGridView control
-            gunaDataGridView1.DataSource = dataTable;
-
-            gunaLabel4.Text = db.GetLatestID(coll).ToString();
-        }
-
-        // Function to convert List<BsonDocument> to DataTable
-        
-
-        private void gunaDataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void gunaTextBox1_TextChanged(object sender, EventArgs e)
-        {
-
+            Misc.SetPlaceholder(Search, "The Format is [Attribute: Value]");
+            Misc.SetPlaceholder(ID, "Enter ID...");
+            Misc.SetPlaceholder(FirstName, "Enter First Name...");
+            Misc.SetPlaceholder(LastName, "Enter Last Name...");
+            Misc.SetPlaceholder(Contact, "Enter Contact Information...");
         }
 
         private void Update_Click(object sender, EventArgs e)
         {
-            int a = int.Parse(TextToId.Text);
-            db.EditRecord("Customer", a, new BsonDocument
+            try
             {
-                {gunaTextBox2.Text ,gunaTextBox3.Text}
+                if (int.TryParse(ID.Text, out int a))
+                {
+                    BsonDocument updateFields = new BsonDocument();
+
+                    // Check each textbox and add it to the updateFields if it's not empty
+                    if (FirstName.Text != "Enter First Name..." && FirstName.Text != "")
+                    {
+                        updateFields.Add("First_Name", FirstName.Text);
+                    }
+
+                    if (LastName.Text != "Enter Last Name..." && LastName.Text != "")
+                    {
+                        updateFields.Add("Last_Name", LastName.Text);
+                    }
+
+                    if (Contact.Text != "Enter Contact Information..." && Contact.Text != "")
+                    {
+                        updateFields.Add("Contact", Contact.Text);
+                    }
+
+                    // Call the EditRecord method with the dynamically created BsonDocument
+                    db.EditRecord(coll, a, updateFields);
+
+                    RefreshDataGridView(coll);
+
+                    Misc.ClearTextBoxes(this);
+                }
+                else
+                {
+                    // Handle the parsing error, for example, show a message to the user.
+                    MessageBox.Show("Invalid ID. Please enter a valid integer.");
+                }
             }
-                );
-            var data = db.GetCollection("Customer"); // Assuming this returns List<BsonDocument>
-
-            // Convert List<BsonDocument> to DataTable
-            DataTable dataTable = Misc.ToDataTable(data);
-
-            // Assuming dataGridView1 is the name of your DataGridView control
-            gunaDataGridView1.DataSource = dataTable;
+            catch(Exception error)
+            {
+                MessageBox.Show(error.Message);
+            }
         }
 
-        private void gunaLabel1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void gunaTextBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void gunaButton1_Click(object sender, EventArgs e)
         {
@@ -92,43 +96,21 @@ namespace ShippingSystem
 
         private void gunaButton7_Click(object sender, EventArgs e)
         {
-            if (int.TryParse(TextToId.Text, out int userId))
+            if (int.TryParse(ID.Text, out int userId))
             {
                 // Delete the user with the specified ID
-                db.DeleteRecord("Customer", userId);
+                db.DeleteRecord(coll, userId);
 
                 // Refresh the DataGridView after deletion
-                RefreshDataGridView();
+                RefreshDataGridView(coll);
+
+                Misc.ClearTextBoxes(this);
             }
             else
             {
-                MessageBox.Show("Please enter a valid user ID for deletion.");
+                MessageBox.Show("Invalid ID. Please enter a valid integer.");
             }
         }
-        private void RefreshDataGridView()
-        {
-            var data = db.GetCollection("Customer"); // Assuming this returns List<BsonDocument>
-
-            // Convert List<BsonDocument> to DataTable
-            DataTable dataTable = Misc.ToDataTable(data);
-
-            // Assuming dataGridView1 is the name of your DataGridView control
-            gunaDataGridView1.DataSource = dataTable;
-        }
-
-        //private void gunaLabel4_Load(object sender, EventArgs e)
-        //{
-        //    var data = db.GetCollection("Customer"); // Assuming this returns List<BsonDocument>
-
-        //    // Convert List<BsonDocument> to DataTable
-        //    DataTable dataTable = ToDataTable(data);
-
-        //    // Assuming dataGridView1 is the name of your DataGridView control
-        //    gunaDataGridView1.DataSource = dataTable;
-
-        //    // Display the total number of customers in the label
-        //    var datas = db.GetLatestID("Customer");
-        //}
 
         private void gunaLabel4_Click(object sender, EventArgs e)
         {
@@ -138,47 +120,35 @@ namespace ShippingSystem
             tracking.Show();
         }
 
-        private void gunaTextBox1_TextChanged_1(object sender, EventArgs e)
-        {
-           
-
-        }
-
-        private void gunaGradient2Panel9_Paint(object sender, PaintEventArgs e)
-            
-        {
-
-        }
-
         private void gunaPictureBox6_Click(object sender, EventArgs e)
         {
-            if (gunaTextBox1.Text == "")
+            if (Search.Text == "" || Search.Text == "The Format is [Attribute: Value]")
             {
-                String coll = "Customer";
-                var data = db.GetCollection(coll); // Assuming this returns List<BsonDocument>
-
-                // Convert List<BsonDocument> to DataTable
-                DataTable dataTable = Misc.ToDataTable(data);
-
-                // Assuming dataGridView1 is the name of your DataGridView control
-                gunaDataGridView1.DataSource = dataTable;
+                RefreshDataGridView(coll);
                 return;
             }
             try
             {
 
                 // Call the method to extract values
-                var result = Misc.ExtractValues(gunaTextBox1.Text);
+                var result = Misc.ExtractValues(Search.Text);
 
-                DataTable dataTable = Misc.ToDataTable(db.SearchRecord("Customer", result.Item1,result.Item2));
+                DataTable dataTable = new DataTable();
+
+                AddHeader(ref dataTable);
+
+                foreach (DataRow row in Misc.ToDataTable(db.SearchRecord(coll, result.Item1, result.Item2)).Rows)
+                {
+                    dataTable.ImportRow(row);
+                }
 
                 // Assuming dataGridView1 is the name of your DataGridView control
-                gunaDataGridView1.DataSource = dataTable;
+                Data.DataSource = dataTable;
 
             }
             catch (FormatException ex)
             {
-                Console.WriteLine("Invalid format: " + ex.Message);
+                MessageBox.Show("Invalid format: " + ex.Message + "\ne.g. First_Name: Sovannara");
             }
         }
 
@@ -188,11 +158,6 @@ namespace ShippingSystem
             Tracking tracking = new Tracking();
             tracking.WindowState = FormWindowState.Maximized;
             tracking.Show();
-        }
-
-        private void gunaButton3_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void gunaButton5_Click(object sender, EventArgs e)
@@ -208,6 +173,50 @@ namespace ShippingSystem
             this.Hide();
             AddCustomer addCus = new AddCustomer();
             addCus.Show();
+        }
+
+        private void RefreshDataGridView(String collection)
+        {
+            var data = db.GetCollection(collection); // Assuming this returns List<BsonDocument>
+
+            // Create a new DataTable
+            DataTable dataTable = new DataTable();
+
+            AddHeader(ref dataTable);
+
+            // Add the data to the DataTable
+            foreach (var document in data)
+            {
+                dataTable.Rows.Add(document.Values.ToArray());
+            }
+
+            // Assuming Data is the name of your GunaDataGridView control
+            Data.DataSource = dataTable;
+
+            // Hide the header row
+            Data.ColumnHeadersVisible = false;
+        }
+
+        private void AddHeader(ref DataTable dataTable)
+        {
+            var data = db.GetCollection(coll);
+
+            // Add columns to the DataTable
+            foreach (var key in data[0].Names)
+            {
+                dataTable.Columns.Add(key);
+            }
+
+            // Add a new row with the attribute names
+            dataTable.Rows.Add(dataTable.Columns.Cast<DataColumn>().Select(c => c.ColumnName).ToArray());
+        }
+
+        private void gunaButton6_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Location location = new Location();
+            location.WindowState = FormWindowState.Maximized;
+            location.Show();
         }
     }
 }

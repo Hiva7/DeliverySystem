@@ -66,6 +66,7 @@ public class Database
                 {
                     { "Status", BsonType.String },
                     { "Price", BsonType.Decimal128 },
+                    { "Start_Time", BsonType.DateTime },
                     { "Customer_id", BsonType.Int32 },
                     { "Location_id", BsonType.Array }
                 }
@@ -83,7 +84,6 @@ public class Database
         // If the field or collection is not defined in the expectedDataTypes dictionary, assume the data type is valid
         return true;
     }
-
 
     private bool ValidateField(string collectionName, string fieldName, string fieldValue)
     {
@@ -216,8 +216,6 @@ public class Database
 
         return matchedDocuments;
     }
-
-
 
     public void AddRecord(string myCollection, BsonDocument myRecord)
     {
@@ -412,11 +410,24 @@ public class Database
         }
 
         var filter = Builders<BsonDocument>.Filter.Eq(myCollection + "_id", id);
+        var document = collection.Find(filter).FirstOrDefault();
+        if (document == null)
+        {
+            Console.WriteLine(
+                $"No document found in {myCollection} collection with {myCollection}_id: {id}"
+            );
+            return;
+        }
+
         var update = Builders<BsonDocument>.Update;
         var updateDefinition = new List<UpdateDefinition<BsonDocument>>();
 
         foreach (var element in myRecord)
         {
+            if (!document.Contains(element.Name))
+            {
+                throw new Exception($"Field '{element.Name}' does not exist in the document");
+            }
             if (!ValidateField(myCollection, element.Name, element.Value.ToString()))
             {
                 throw new Exception($"Invalid value '{element.Value}' for field '{element.Name}'");
@@ -425,10 +436,6 @@ public class Database
             {
                 throw new Exception($"Invalid data type for field '{element.Name}'");
             }
-        }
-
-        foreach (var element in myRecord)
-        {
             updateDefinition.Add(update.Set(element.Name, element.Value));
         }
 
@@ -442,6 +449,93 @@ public class Database
         }
 
         Console.WriteLine("Document has been updated");
+    }
+
+    public void EditRelationship(string myCollection, int id, BsonDocument relationship)
+    {
+        var collection = database.GetCollection<BsonDocument>(myCollection);
+        if (collection is null)
+        {
+            throw new Exception("Collection not found");
+        }
+
+        var filter = Builders<BsonDocument>.Filter.Eq(myCollection + "_id", id);
+        var document = collection.Find(filter).FirstOrDefault();
+        if (document == null)
+        {
+            Console.WriteLine(
+                $"No document found in {myCollection} collection with {myCollection}_id: {id}"
+            );
+            return;
+        }
+
+        var update = Builders<BsonDocument>.Update;
+        var updates = new List<UpdateDefinition<BsonDocument>>();
+
+        foreach (var element in relationship)
+        {
+            if (!element.Name.EndsWith("_id"))
+            {
+                throw new Exception($"Foreign key '{element.Name}' does not end with '_id'");
+            }
+            if (element.Name != myCollection + "_id")
+            {
+                var relatedCollectionName = element.Name.Substring(0, element.Name.Length - 3);
+                var relatedCollection = database.GetCollection<BsonDocument>(relatedCollectionName);
+
+                if (element.Value.IsBsonArray)
+                {
+                    var array = element.Value.AsBsonArray;
+                    var newArray = new BsonArray();
+                    foreach (var value in array)
+                    {
+                        var intValue = value.AsInt32;
+                        var relatedFilter = Builders<BsonDocument>.Filter.Eq(
+                            element.Name,
+                            intValue
+                        );
+                        var relatedDocument = relatedCollection
+                            .Find(relatedFilter)
+                            .FirstOrDefault();
+
+                        if (relatedDocument == null)
+                        {
+                            throw new Exception(
+                                $"No document found in {relatedCollectionName} collection with {element.Name}: {intValue}"
+                            );
+                        }
+                        newArray.Add(intValue);
+                    }
+                    updates.Add(update.Set(element.Name, newArray));
+                }
+                else
+                {
+                    var relatedFilter = Builders<BsonDocument>.Filter.Eq(
+                        element.Name,
+                        element.Value
+                    );
+                    var relatedDocument = relatedCollection.Find(relatedFilter).FirstOrDefault();
+
+                    if (relatedDocument == null)
+                    {
+                        throw new Exception(
+                            $"No document found in {relatedCollectionName} collection with {element.Name}: {element.Value}"
+                        );
+                    }
+                    if (!ValidateDataType(myCollection, element.Name, element.Value))
+                    {
+                        throw new Exception($"Invalid data type for field '{element.Name}'");
+                    }
+                    updates.Add(update.Set(element.Name, element.Value));
+                }
+            }
+        }
+
+        if (updates.Count > 0)
+        {
+            var updateDefinition = update.Combine(updates);
+            collection.UpdateOne(filter, updateDefinition);
+        }
     }
 
     public void CreateCollection(string myCollection)

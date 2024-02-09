@@ -1,6 +1,6 @@
 ﻿namespace ShippingSystem
 {
-    partial class Customer
+    partial class Location
     {
         /// <summary>
         /// Required designer variable.
@@ -29,15 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Customer));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Location));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Data = new Guna.UI.WinForms.GunaDataGridView();
-            this.Update = new Guna.UI.WinForms.GunaButton();
-            this.ID = new Guna.UI.WinForms.GunaTextBox();
-            this.FirstName = new Guna.UI.WinForms.GunaTextBox();
-            this.LastName = new Guna.UI.WinForms.GunaTextBox();
             this.gunaElipse1 = new Guna.UI.WinForms.GunaElipse(this.components);
             this.gunaPictureBox1 = new Guna.UI.WinForms.GunaPictureBox();
             this.gunaPanel1 = new Guna.UI.WinForms.GunaPanel();
@@ -53,85 +49,52 @@
             this.gunaCirclePictureBox1 = new Guna.UI.WinForms.GunaCirclePictureBox();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.gunaElipse3 = new Guna.UI.WinForms.GunaElipse(this.components);
-            this.gunaGradient2Panel2 = new Guna.UI.WinForms.GunaGradient2Panel();
-            this.idText = new Guna.UI.WinForms.GunaGradient2Panel();
-            this.gunaPictureBox2 = new Guna.UI.WinForms.GunaPictureBox();
             this.gunaElipse4 = new Guna.UI.WinForms.GunaElipse(this.components);
-            this.gunaGradient2Panel3 = new Guna.UI.WinForms.GunaGradient2Panel();
-            this.gunaGradient2Panel4 = new Guna.UI.WinForms.GunaGradient2Panel();
-            this.gunaPictureBox3 = new Guna.UI.WinForms.GunaPictureBox();
             this.gunaElipse5 = new Guna.UI.WinForms.GunaElipse(this.components);
-            this.gunaGradient2Panel5 = new Guna.UI.WinForms.GunaGradient2Panel();
-            this.gunaGradient2Panel6 = new Guna.UI.WinForms.GunaGradient2Panel();
-            this.gunaPictureBox4 = new Guna.UI.WinForms.GunaPictureBox();
             this.gunaElipse6 = new Guna.UI.WinForms.GunaElipse(this.components);
             this.gunaElipse7 = new Guna.UI.WinForms.GunaElipse(this.components);
-            this.gunaButton7 = new Guna.UI.WinForms.GunaButton();
-            this.gunaGradient2Panel7 = new Guna.UI.WinForms.GunaGradient2Panel();
-            this.TotalCustomer = new Guna.UI.WinForms.GunaLabel();
-            this.gunaPictureBox5 = new Guna.UI.WinForms.GunaPictureBox();
-            this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
             this.gunaGradient2Panel8 = new Guna.UI.WinForms.GunaGradient2Panel();
             this.gunaGradient2Panel9 = new Guna.UI.WinForms.GunaGradient2Panel();
             this.gunaPictureBox6 = new Guna.UI.WinForms.GunaPictureBox();
             this.Search = new Guna.UI.WinForms.GunaTextBox();
             this.gunaElipse8 = new Guna.UI.WinForms.GunaElipse(this.components);
             this.gunaPictureBox7 = new Guna.UI.WinForms.GunaPictureBox();
-            this.TextToAddCustomer = new Guna.UI.WinForms.GunaButton();
-            this.gunaGradient2Panel10 = new Guna.UI.WinForms.GunaGradient2Panel();
-            this.gunaGradient2Panel11 = new Guna.UI.WinForms.GunaGradient2Panel();
-            this.gunaPictureBox8 = new Guna.UI.WinForms.GunaPictureBox();
-            this.Contact = new Guna.UI.WinForms.GunaTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.Data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).BeginInit();
             this.gunaGradient2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).BeginInit();
-            this.gunaGradient2Panel2.SuspendLayout();
-            this.idText.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox2)).BeginInit();
-            this.gunaGradient2Panel3.SuspendLayout();
-            this.gunaGradient2Panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox3)).BeginInit();
-            this.gunaGradient2Panel5.SuspendLayout();
-            this.gunaGradient2Panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox4)).BeginInit();
-            this.gunaGradient2Panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox5)).BeginInit();
             this.gunaGradient2Panel8.SuspendLayout();
             this.gunaGradient2Panel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox7)).BeginInit();
-            this.gunaGradient2Panel10.SuspendLayout();
-            this.gunaGradient2Panel11.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox8)).BeginInit();
             this.SuspendLayout();
             // 
             // Data
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.Data.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.Data.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.Data.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.Data.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(41)))), ((int)(((byte)(62)))));
             this.Data.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Data.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.Data.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Data.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Data.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             resources.ApplyResources(this.Data, "Data");
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.Data.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.Data.DefaultCellStyle = dataGridViewCellStyle6;
             this.Data.EnableHeadersVisualStyles = false;
             this.Data.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.Data.Name = "Data";
@@ -159,72 +122,6 @@
             this.Data.ThemeStyle.RowsStyle.Height = 22;
             this.Data.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.Data.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            // 
-            // Update
-            // 
-            this.Update.AnimationHoverSpeed = 0.07F;
-            this.Update.AnimationSpeed = 0.03F;
-            this.Update.BackColor = System.Drawing.Color.Transparent;
-            this.Update.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.Update.BorderColor = System.Drawing.Color.Black;
-            this.Update.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.Update.FocusedColor = System.Drawing.Color.Empty;
-            resources.ApplyResources(this.Update, "Update");
-            this.Update.ForeColor = System.Drawing.Color.White;
-            this.Update.Image = ((System.Drawing.Image)(resources.GetObject("Update.Image")));
-            this.Update.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.Update.ImageSize = new System.Drawing.Size(25, 25);
-            this.Update.Name = "Update";
-            this.Update.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.Update.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.Update.OnHoverForeColor = System.Drawing.Color.White;
-            this.Update.OnHoverImage = null;
-            this.Update.OnPressedColor = System.Drawing.Color.Black;
-            this.Update.Radius = 10;
-            this.Update.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.Update.Click += new System.EventHandler(this.Update_Click);
-            // 
-            // ID
-            // 
-            this.ID.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(146)))), ((int)(((byte)(165)))));
-            this.ID.BorderColor = System.Drawing.Color.Silver;
-            this.ID.BorderSize = 0;
-            this.ID.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.ID.FocusedBaseColor = System.Drawing.Color.White;
-            this.ID.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.ID.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            resources.ApplyResources(this.ID, "ID");
-            this.ID.Name = "ID";
-            this.ID.PasswordChar = '\0';
-            this.ID.SelectedText = "";
-            // 
-            // FirstName
-            // 
-            this.FirstName.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(146)))), ((int)(((byte)(165)))));
-            this.FirstName.BorderColor = System.Drawing.Color.Silver;
-            this.FirstName.BorderSize = 0;
-            this.FirstName.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.FirstName.FocusedBaseColor = System.Drawing.Color.White;
-            this.FirstName.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.FirstName.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            resources.ApplyResources(this.FirstName, "FirstName");
-            this.FirstName.Name = "FirstName";
-            this.FirstName.PasswordChar = '\0';
-            this.FirstName.SelectedText = "";
-            // 
-            // LastName
-            // 
-            this.LastName.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(146)))), ((int)(((byte)(165)))));
-            this.LastName.BorderColor = System.Drawing.Color.Silver;
-            this.LastName.BorderSize = 0;
-            this.LastName.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.LastName.FocusedBaseColor = System.Drawing.Color.White;
-            this.LastName.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.LastName.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            resources.ApplyResources(this.LastName, "LastName");
-            this.LastName.Name = "LastName";
-            this.LastName.PasswordChar = '\0';
-            this.LastName.SelectedText = "";
             // 
             // gunaElipse1
             // 
@@ -280,7 +177,6 @@
             this.gunaButton6.OnHoverImage = null;
             this.gunaButton6.OnPressedColor = System.Drawing.Color.Black;
             this.gunaButton6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.gunaButton6.Click += new System.EventHandler(this.gunaButton6_Click);
             // 
             // gunaButton8
             // 
@@ -368,6 +264,7 @@
             this.gunaButton3.OnHoverImage = null;
             this.gunaButton3.OnPressedColor = System.Drawing.Color.Black;
             this.gunaButton3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.gunaButton3.Click += new System.EventHandler(this.gunaButton3_Click);
             // 
             // gunaButton2
             // 
@@ -435,169 +332,23 @@
             // gunaElipse3
             // 
             this.gunaElipse3.Radius = 5;
-            this.gunaElipse3.TargetControl = this.ID;
-            // 
-            // gunaGradient2Panel2
-            // 
-            this.gunaGradient2Panel2.BackColor = System.Drawing.Color.Transparent;
-            this.gunaGradient2Panel2.Controls.Add(this.idText);
-            this.gunaGradient2Panel2.Controls.Add(this.ID);
-            this.gunaGradient2Panel2.GradientColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(41)))), ((int)(((byte)(62)))));
-            this.gunaGradient2Panel2.GradientColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(41)))), ((int)(((byte)(62)))));
-            this.gunaGradient2Panel2.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
-            resources.ApplyResources(this.gunaGradient2Panel2, "gunaGradient2Panel2");
-            this.gunaGradient2Panel2.Name = "gunaGradient2Panel2";
-            this.gunaGradient2Panel2.Radius = 10;
-            // 
-            // idText
-            // 
-            this.idText.BackColor = System.Drawing.Color.Transparent;
-            this.idText.Controls.Add(this.gunaPictureBox2);
-            this.idText.GradientColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(127)))), ((int)(((byte)(199)))));
-            this.idText.GradientColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(127)))), ((int)(((byte)(199)))));
-            resources.ApplyResources(this.idText, "idText");
-            this.idText.Name = "idText";
-            this.idText.Radius = 10;
-            // 
-            // gunaPictureBox2
-            // 
-            this.gunaPictureBox2.BaseColor = System.Drawing.Color.White;
-            resources.ApplyResources(this.gunaPictureBox2, "gunaPictureBox2");
-            this.gunaPictureBox2.Name = "gunaPictureBox2";
-            this.gunaPictureBox2.TabStop = false;
             // 
             // gunaElipse4
             // 
             this.gunaElipse4.TargetControl = this;
             // 
-            // gunaGradient2Panel3
-            // 
-            this.gunaGradient2Panel3.BackColor = System.Drawing.Color.Transparent;
-            this.gunaGradient2Panel3.Controls.Add(this.gunaGradient2Panel4);
-            this.gunaGradient2Panel3.Controls.Add(this.FirstName);
-            this.gunaGradient2Panel3.GradientColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(41)))), ((int)(((byte)(62)))));
-            this.gunaGradient2Panel3.GradientColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(41)))), ((int)(((byte)(62)))));
-            this.gunaGradient2Panel3.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
-            resources.ApplyResources(this.gunaGradient2Panel3, "gunaGradient2Panel3");
-            this.gunaGradient2Panel3.Name = "gunaGradient2Panel3";
-            this.gunaGradient2Panel3.Radius = 10;
-            // 
-            // gunaGradient2Panel4
-            // 
-            this.gunaGradient2Panel4.BackColor = System.Drawing.Color.Transparent;
-            this.gunaGradient2Panel4.Controls.Add(this.gunaPictureBox3);
-            this.gunaGradient2Panel4.GradientColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(127)))), ((int)(((byte)(199)))));
-            this.gunaGradient2Panel4.GradientColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(127)))), ((int)(((byte)(199)))));
-            resources.ApplyResources(this.gunaGradient2Panel4, "gunaGradient2Panel4");
-            this.gunaGradient2Panel4.Name = "gunaGradient2Panel4";
-            this.gunaGradient2Panel4.Radius = 10;
-            // 
-            // gunaPictureBox3
-            // 
-            this.gunaPictureBox3.BaseColor = System.Drawing.Color.White;
-            resources.ApplyResources(this.gunaPictureBox3, "gunaPictureBox3");
-            this.gunaPictureBox3.Name = "gunaPictureBox3";
-            this.gunaPictureBox3.TabStop = false;
-            // 
             // gunaElipse5
             // 
             this.gunaElipse5.Radius = 5;
-            this.gunaElipse5.TargetControl = this.LastName;
-            // 
-            // gunaGradient2Panel5
-            // 
-            this.gunaGradient2Panel5.BackColor = System.Drawing.Color.Transparent;
-            this.gunaGradient2Panel5.Controls.Add(this.gunaGradient2Panel6);
-            this.gunaGradient2Panel5.Controls.Add(this.LastName);
-            this.gunaGradient2Panel5.GradientColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(41)))), ((int)(((byte)(62)))));
-            this.gunaGradient2Panel5.GradientColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(41)))), ((int)(((byte)(62)))));
-            this.gunaGradient2Panel5.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
-            resources.ApplyResources(this.gunaGradient2Panel5, "gunaGradient2Panel5");
-            this.gunaGradient2Panel5.Name = "gunaGradient2Panel5";
-            this.gunaGradient2Panel5.Radius = 10;
-            // 
-            // gunaGradient2Panel6
-            // 
-            this.gunaGradient2Panel6.BackColor = System.Drawing.Color.Transparent;
-            this.gunaGradient2Panel6.Controls.Add(this.gunaPictureBox4);
-            this.gunaGradient2Panel6.GradientColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(127)))), ((int)(((byte)(199)))));
-            this.gunaGradient2Panel6.GradientColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(127)))), ((int)(((byte)(199)))));
-            resources.ApplyResources(this.gunaGradient2Panel6, "gunaGradient2Panel6");
-            this.gunaGradient2Panel6.Name = "gunaGradient2Panel6";
-            this.gunaGradient2Panel6.Radius = 10;
-            // 
-            // gunaPictureBox4
-            // 
-            this.gunaPictureBox4.BaseColor = System.Drawing.Color.White;
-            resources.ApplyResources(this.gunaPictureBox4, "gunaPictureBox4");
-            this.gunaPictureBox4.Name = "gunaPictureBox4";
-            this.gunaPictureBox4.TabStop = false;
             // 
             // gunaElipse6
             // 
             this.gunaElipse6.Radius = 5;
-            this.gunaElipse6.TargetControl = this.FirstName;
             // 
             // gunaElipse7
             // 
             this.gunaElipse7.Radius = 5;
             this.gunaElipse7.TargetControl = this.Data;
-            // 
-            // gunaButton7
-            // 
-            this.gunaButton7.AnimationHoverSpeed = 0.07F;
-            this.gunaButton7.AnimationSpeed = 0.03F;
-            this.gunaButton7.BackColor = System.Drawing.Color.Transparent;
-            this.gunaButton7.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(46)))), ((int)(((byte)(90)))));
-            this.gunaButton7.BorderColor = System.Drawing.Color.Black;
-            this.gunaButton7.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaButton7.FocusedColor = System.Drawing.Color.Empty;
-            resources.ApplyResources(this.gunaButton7, "gunaButton7");
-            this.gunaButton7.ForeColor = System.Drawing.Color.White;
-            this.gunaButton7.Image = ((System.Drawing.Image)(resources.GetObject("gunaButton7.Image")));
-            this.gunaButton7.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.gunaButton7.ImageSize = new System.Drawing.Size(25, 25);
-            this.gunaButton7.Name = "gunaButton7";
-            this.gunaButton7.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.gunaButton7.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaButton7.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaButton7.OnHoverImage = null;
-            this.gunaButton7.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaButton7.Radius = 10;
-            this.gunaButton7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.gunaButton7.Click += new System.EventHandler(this.gunaButton7_Click);
-            // 
-            // gunaGradient2Panel7
-            // 
-            this.gunaGradient2Panel7.BackColor = System.Drawing.Color.Transparent;
-            this.gunaGradient2Panel7.Controls.Add(this.TotalCustomer);
-            this.gunaGradient2Panel7.Controls.Add(this.gunaPictureBox5);
-            this.gunaGradient2Panel7.Controls.Add(this.gunaLabel2);
-            this.gunaGradient2Panel7.GradientColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(41)))), ((int)(((byte)(62)))));
-            this.gunaGradient2Panel7.GradientColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(41)))), ((int)(((byte)(62)))));
-            resources.ApplyResources(this.gunaGradient2Panel7, "gunaGradient2Panel7");
-            this.gunaGradient2Panel7.Name = "gunaGradient2Panel7";
-            this.gunaGradient2Panel7.Radius = 10;
-            // 
-            // TotalCustomer
-            // 
-            resources.ApplyResources(this.TotalCustomer, "TotalCustomer");
-            this.TotalCustomer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.TotalCustomer.Name = "TotalCustomer";
-            this.TotalCustomer.Click += new System.EventHandler(this.gunaLabel4_Click);
-            // 
-            // gunaPictureBox5
-            // 
-            this.gunaPictureBox5.BaseColor = System.Drawing.Color.White;
-            resources.ApplyResources(this.gunaPictureBox5, "gunaPictureBox5");
-            this.gunaPictureBox5.Name = "gunaPictureBox5";
-            this.gunaPictureBox5.TabStop = false;
-            // 
-            // gunaLabel2
-            // 
-            resources.ApplyResources(this.gunaLabel2, "gunaLabel2");
-            this.gunaLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.gunaLabel2.Name = "gunaLabel2";
             // 
             // gunaGradient2Panel8
             // 
@@ -656,119 +407,29 @@
             this.gunaPictureBox7.Name = "gunaPictureBox7";
             this.gunaPictureBox7.TabStop = false;
             // 
-            // TextToAddCustomer
-            // 
-            this.TextToAddCustomer.AnimationHoverSpeed = 0.07F;
-            this.TextToAddCustomer.AnimationSpeed = 0.03F;
-            this.TextToAddCustomer.BackColor = System.Drawing.Color.Transparent;
-            this.TextToAddCustomer.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.TextToAddCustomer.BorderColor = System.Drawing.Color.Black;
-            this.TextToAddCustomer.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.TextToAddCustomer.FocusedColor = System.Drawing.Color.Empty;
-            resources.ApplyResources(this.TextToAddCustomer, "TextToAddCustomer");
-            this.TextToAddCustomer.ForeColor = System.Drawing.Color.White;
-            this.TextToAddCustomer.Image = ((System.Drawing.Image)(resources.GetObject("TextToAddCustomer.Image")));
-            this.TextToAddCustomer.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.TextToAddCustomer.ImageSize = new System.Drawing.Size(25, 25);
-            this.TextToAddCustomer.Name = "TextToAddCustomer";
-            this.TextToAddCustomer.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.TextToAddCustomer.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.TextToAddCustomer.OnHoverForeColor = System.Drawing.Color.White;
-            this.TextToAddCustomer.OnHoverImage = null;
-            this.TextToAddCustomer.OnPressedColor = System.Drawing.Color.Black;
-            this.TextToAddCustomer.Radius = 10;
-            this.TextToAddCustomer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.TextToAddCustomer.Click += new System.EventHandler(this.TextToAddCustomer_Click);
-            // 
-            // gunaGradient2Panel10
-            // 
-            this.gunaGradient2Panel10.BackColor = System.Drawing.Color.Transparent;
-            this.gunaGradient2Panel10.Controls.Add(this.gunaGradient2Panel11);
-            this.gunaGradient2Panel10.Controls.Add(this.Contact);
-            this.gunaGradient2Panel10.GradientColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(41)))), ((int)(((byte)(62)))));
-            this.gunaGradient2Panel10.GradientColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(41)))), ((int)(((byte)(62)))));
-            this.gunaGradient2Panel10.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
-            resources.ApplyResources(this.gunaGradient2Panel10, "gunaGradient2Panel10");
-            this.gunaGradient2Panel10.Name = "gunaGradient2Panel10";
-            this.gunaGradient2Panel10.Radius = 10;
-            // 
-            // gunaGradient2Panel11
-            // 
-            this.gunaGradient2Panel11.BackColor = System.Drawing.Color.Transparent;
-            this.gunaGradient2Panel11.Controls.Add(this.gunaPictureBox8);
-            this.gunaGradient2Panel11.GradientColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(127)))), ((int)(((byte)(199)))));
-            this.gunaGradient2Panel11.GradientColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(127)))), ((int)(((byte)(199)))));
-            resources.ApplyResources(this.gunaGradient2Panel11, "gunaGradient2Panel11");
-            this.gunaGradient2Panel11.Name = "gunaGradient2Panel11";
-            this.gunaGradient2Panel11.Radius = 10;
-            // 
-            // gunaPictureBox8
-            // 
-            this.gunaPictureBox8.BaseColor = System.Drawing.Color.White;
-            resources.ApplyResources(this.gunaPictureBox8, "gunaPictureBox8");
-            this.gunaPictureBox8.Name = "gunaPictureBox8";
-            this.gunaPictureBox8.TabStop = false;
-            // 
-            // Contact
-            // 
-            this.Contact.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(146)))), ((int)(((byte)(165)))));
-            this.Contact.BorderColor = System.Drawing.Color.Silver;
-            this.Contact.BorderSize = 0;
-            this.Contact.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.Contact.FocusedBaseColor = System.Drawing.Color.White;
-            this.Contact.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.Contact.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            resources.ApplyResources(this.Contact, "Contact");
-            this.Contact.Name = "Contact";
-            this.Contact.PasswordChar = '\0';
-            this.Contact.SelectedText = "";
-            // 
-            // Customer
+            // Location
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.Controls.Add(this.gunaGradient2Panel10);
-            this.Controls.Add(this.TextToAddCustomer);
             this.Controls.Add(this.gunaPictureBox7);
             this.Controls.Add(this.gunaGradient2Panel8);
-            this.Controls.Add(this.gunaGradient2Panel7);
-            this.Controls.Add(this.gunaButton7);
-            this.Controls.Add(this.gunaGradient2Panel5);
-            this.Controls.Add(this.gunaGradient2Panel3);
-            this.Controls.Add(this.gunaGradient2Panel2);
             this.Controls.Add(this.gunaLabel1);
             this.Controls.Add(this.gunaCirclePictureBox1);
             this.Controls.Add(this.gunaGradient2Panel1);
             this.Controls.Add(this.gunaPanel1);
-            this.Controls.Add(this.Update);
             this.Controls.Add(this.Data);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Customer";
+            this.Name = "Location";
             this.Load += new System.EventHandler(this.Overview_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Data)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).EndInit();
             this.gunaGradient2Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).EndInit();
-            this.gunaGradient2Panel2.ResumeLayout(false);
-            this.idText.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox2)).EndInit();
-            this.gunaGradient2Panel3.ResumeLayout(false);
-            this.gunaGradient2Panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox3)).EndInit();
-            this.gunaGradient2Panel5.ResumeLayout(false);
-            this.gunaGradient2Panel6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox4)).EndInit();
-            this.gunaGradient2Panel7.ResumeLayout(false);
-            this.gunaGradient2Panel7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox5)).EndInit();
             this.gunaGradient2Panel8.ResumeLayout(false);
             this.gunaGradient2Panel9.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox7)).EndInit();
-            this.gunaGradient2Panel10.ResumeLayout(false);
-            this.gunaGradient2Panel11.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox8)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -777,10 +438,6 @@
         #endregion
 
         private Guna.UI.WinForms.GunaDataGridView Data;
-        private Guna.UI.WinForms.GunaButton Update;
-        private Guna.UI.WinForms.GunaTextBox ID;
-        private Guna.UI.WinForms.GunaTextBox FirstName;
-        private Guna.UI.WinForms.GunaTextBox LastName;
         private Guna.UI.WinForms.GunaElipse gunaElipse1;
         private Guna.UI.WinForms.GunaPanel gunaPanel1;
         private Guna.UI.WinForms.GunaGradient2Panel gunaGradient2Panel1;
@@ -794,36 +451,17 @@
         private Guna.UI.WinForms.GunaCirclePictureBox gunaCirclePictureBox1;
         private Guna.UI.WinForms.GunaLabel gunaLabel1;
         private Guna.UI.WinForms.GunaElipse gunaElipse3;
-        private Guna.UI.WinForms.GunaGradient2Panel gunaGradient2Panel2;
-        private Guna.UI.WinForms.GunaGradient2Panel idText;
         private Guna.UI.WinForms.GunaElipse gunaElipse4;
-        private Guna.UI.WinForms.GunaGradient2Panel gunaGradient2Panel3;
-        private Guna.UI.WinForms.GunaGradient2Panel gunaGradient2Panel4;
-        private Guna.UI.WinForms.GunaPictureBox gunaPictureBox2;
-        private Guna.UI.WinForms.GunaGradient2Panel gunaGradient2Panel5;
-        private Guna.UI.WinForms.GunaGradient2Panel gunaGradient2Panel6;
         private Guna.UI.WinForms.GunaElipse gunaElipse5;
         private Guna.UI.WinForms.GunaElipse gunaElipse6;
         private Guna.UI.WinForms.GunaElipse gunaElipse7;
-        private Guna.UI.WinForms.GunaGradient2Panel gunaGradient2Panel7;
-        private Guna.UI.WinForms.GunaButton gunaButton7;
-        private Guna.UI.WinForms.GunaPictureBox gunaPictureBox5;
-        private Guna.UI.WinForms.GunaLabel gunaLabel2;
         private Guna.UI.WinForms.GunaGradient2Panel gunaGradient2Panel8;
         private Guna.UI.WinForms.GunaGradient2Panel gunaGradient2Panel9;
         private Guna.UI.WinForms.GunaPictureBox gunaPictureBox6;
         private Guna.UI.WinForms.GunaTextBox Search;
         private Guna.UI.WinForms.GunaElipse gunaElipse8;
         private Guna.UI.WinForms.GunaButton gunaButton8;
-        private Guna.UI.WinForms.GunaLabel TotalCustomer;
         private Guna.UI.WinForms.GunaPictureBox gunaPictureBox7;
-        private Guna.UI.WinForms.GunaButton TextToAddCustomer;
-        private Guna.UI.WinForms.GunaGradient2Panel gunaGradient2Panel10;
-        private Guna.UI.WinForms.GunaGradient2Panel gunaGradient2Panel11;
-        private Guna.UI.WinForms.GunaTextBox Contact;
-        private Guna.UI.WinForms.GunaPictureBox gunaPictureBox3;
-        private Guna.UI.WinForms.GunaPictureBox gunaPictureBox4;
-        private Guna.UI.WinForms.GunaPictureBox gunaPictureBox8;
         private Guna.UI.WinForms.GunaButton gunaButton6;
     }
 }

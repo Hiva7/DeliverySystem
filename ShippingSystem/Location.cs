@@ -1,5 +1,4 @@
-﻿using DnsClient;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,37 +7,37 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MongoDB.Bson;
+
 
 namespace ShippingSystem
 {
-    public partial class Overview : Form
+
+    public partial class Location : Form
     {
-
         readonly private Database db;
-        readonly String coll = "Order";
+        readonly String coll = "Location";
 
-        public Overview()
+        public Location()
         {
             InitializeComponent();
             db = new Database("mongodb+srv://Hiva:Hiva404@cluster0.4nn0wuf.mongodb.net/", "DeliverySystem");
-            this.WindowState = FormWindowState.Maximized;   
         }
 
         private void Overview_Load(object sender, EventArgs e)
         {
             RefreshDataGridView(coll);
 
-            TotalCustomer.Text = db.GetLatestID("Customer").ToString();
-            TotalTruck.Text = db.GetLatestID("Truck").ToString();
-            TotalOrder.Text = db.GetLatestID("Order").ToString();
+            Misc.SetPlaceholder(Search, "The Format is [Attribute: Value]");
         }
 
-        private void gunaButton3_Click_1(object sender, EventArgs e)
+
+        private void gunaButton1_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Customer customer = new Customer();
-            customer.WindowState = FormWindowState.Maximized;
-            customer.Show();
+            Overview overview = new Overview();
+            overview.WindowState = FormWindowState.Maximized;
+            overview.Show();
         }
 
         private void gunaButton8_Click(object sender, EventArgs e)
@@ -46,10 +45,38 @@ namespace ShippingSystem
             this.Close();
         }
 
-        private void gunaDataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void gunaPictureBox6_Click(object sender, EventArgs e)
         {
+            if (Search.Text == "" || Search.Text == "The Format is [Attribute: Value]")
+            {
+                RefreshDataGridView(coll);
+                return;
+            }
+            try
+            {
 
+                // Call the method to extract values
+                var result = Misc.ExtractValues(Search.Text);
+
+                DataTable dataTable = new DataTable();
+
+                AddHeader(ref dataTable);
+
+                foreach (DataRow row in Misc.ToDataTable(db.SearchRecord(coll, result.Item1, result.Item2)).Rows)
+                {
+                    dataTable.ImportRow(row);
+                }
+
+                // Assuming dataGridView1 is the name of your DataGridView control
+                Data.DataSource = dataTable;
+
+            }
+            catch (FormatException ex)
+            {
+                MessageBox.Show("Invalid format: " + ex.Message + "\ne.g. First_Name: Sovannara");
+            }
         }
+
         private void gunaButton2_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -66,29 +93,11 @@ namespace ShippingSystem
             truck.Show();
         }
 
-        private void gunaPictureBox6_Click(object sender, EventArgs e)
+        private void TextToAddCustomer_Click(object sender, EventArgs e)
         {
             this.Hide();
-            AddOrder addOrder = new AddOrder();
-            addOrder.Show();
-        }
-
-        private void gunaGradient2Panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void gunaGradient2Panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void gunaButton4_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Location location = new Location();
-            location.WindowState = FormWindowState.Maximized;
-            location.Show();
+            AddCustomer addCus = new AddCustomer();
+            addCus.Show();
         }
 
         private void RefreshDataGridView(String collection)
@@ -100,23 +109,10 @@ namespace ShippingSystem
 
             AddHeader(ref dataTable);
 
-            // Get the current time
-            DateTime currentTime = DateTime.UtcNow;
-
             // Add the data to the DataTable
             foreach (var document in data)
             {
-                // Parse the Start_Time from the document
-                DateTime startTime = DateTime.Parse(document["Start_Time"].ToString());
-
-                // Calculate the difference between the current time and the start time
-                TimeSpan difference = currentTime - startTime;
-
-                // Only add the row to the DataTable if the difference is less than or equal to 24 hours
-                if (difference.TotalHours <= 24)
-                {
-                    dataTable.Rows.Add(document.Values.ToArray());
-                }
+                dataTable.Rows.Add(document.Values.ToArray());
             }
 
             // Assuming Data is the name of your GunaDataGridView control
@@ -125,7 +121,6 @@ namespace ShippingSystem
             // Hide the header row
             Data.ColumnHeadersVisible = false;
         }
-
 
         private void AddHeader(ref DataTable dataTable)
         {
@@ -141,9 +136,12 @@ namespace ShippingSystem
             dataTable.Rows.Add(dataTable.Columns.Cast<DataColumn>().Select(c => c.ColumnName).ToArray());
         }
 
-        private void gunaDataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void gunaButton3_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            Customer customer = new Customer();
+            customer.WindowState = FormWindowState.Maximized;
+            customer.Show();
         }
     }
 }

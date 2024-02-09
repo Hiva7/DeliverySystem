@@ -40,8 +40,24 @@ namespace ShippingSystem
 
         private void Add_Click(object sender, EventArgs e)
         {
+            
             try
             {
+                if (FirstName.Text == "" || FirstName.Text == "Enter First Name...")
+                {
+                    MessageBox.Show("Please fill out all textboxes.");
+                    return;
+                }
+                if (LastName.Text == "" || LastName.Text == "Enter Last Name...")
+                {
+                    MessageBox.Show("Please fill out all textboxes.");
+                    return;
+                }
+                if (Contact.Text == "" || Contact.Text == "Enter Contact Information...")
+                {
+                    MessageBox.Show("Please fill out all textboxes.");
+                    return;
+                }
                 var firstName = new BsonString(FirstName.Text);
                 var lastName = new BsonString(LastName.Text);
                 var contact = new BsonString(Contact.Text);

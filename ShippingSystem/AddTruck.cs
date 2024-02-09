@@ -20,8 +20,8 @@ namespace ShippingSystem
         {
             InitializeComponent();
             TotalTruck.Text = db.GetLatestID("Truck").ToString();
-            Misc.SetPlaceholder(LocationOne, "Enter Starting Point...");
-            Misc.SetPlaceholder(LocationTwo, "Enter Destination...");
+            Misc.SetPlaceholder(LocationOne, "Enter Starting Point ID...");
+            Misc.SetPlaceholder(LocationTwo, "Enter Destination ID...");
             Misc.SetPlaceholder(TravelTime, "Enter Time Needed For A Round-Trip(s)...");
         }
 

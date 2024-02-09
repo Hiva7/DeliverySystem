@@ -60,6 +60,10 @@
             this.gunaGradient2Panel2 = new Guna.UI.WinForms.GunaGradient2Panel();
             this.gunaPictureBox1 = new Guna.UI.WinForms.GunaPictureBox();
             this.LocationTwo = new Guna.UI.WinForms.GunaTextBox();
+            this.gunaGradient2Panel3 = new Guna.UI.WinForms.GunaGradient2Panel();
+            this.idText = new Guna.UI.WinForms.GunaGradient2Panel();
+            this.gunaPictureBox2 = new Guna.UI.WinForms.GunaPictureBox();
+            this.CustomerID = new Guna.UI.WinForms.GunaTextBox();
             this.gunaGradient2Panel7.SuspendLayout();
             this.gunaGradient2Panel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox5)).BeginInit();
@@ -72,6 +76,9 @@
             this.gunaGradient2Panel1.SuspendLayout();
             this.gunaGradient2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).BeginInit();
+            this.gunaGradient2Panel3.SuspendLayout();
+            this.idText.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // gunaElipse1
@@ -107,7 +114,7 @@
             this.gunaGradient2Panel7.Controls.Add(this.gunaGradient2Panel9);
             this.gunaGradient2Panel7.GradientColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(127)))), ((int)(((byte)(199)))));
             this.gunaGradient2Panel7.GradientColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(127)))), ((int)(((byte)(199)))));
-            this.gunaGradient2Panel7.Location = new System.Drawing.Point(511, 100);
+            this.gunaGradient2Panel7.Location = new System.Drawing.Point(511, 149);
             this.gunaGradient2Panel7.Margin = new System.Windows.Forms.Padding(4);
             this.gunaGradient2Panel7.Name = "gunaGradient2Panel7";
             this.gunaGradient2Panel7.Radius = 10;
@@ -242,7 +249,7 @@
             this.Price.PasswordChar = '\0';
             this.Price.Radius = 5;
             this.Price.SelectedText = "";
-            this.Price.Size = new System.Drawing.Size(341, 49);
+            this.Price.Size = new System.Drawing.Size(350, 49);
             this.Price.TabIndex = 1;
             // 
             // gunaPictureBox4
@@ -349,7 +356,7 @@
             this.gunaGradient2Panel14.GradientColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(41)))), ((int)(((byte)(62)))));
             this.gunaGradient2Panel14.GradientColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(41)))), ((int)(((byte)(62)))));
             this.gunaGradient2Panel14.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
-            this.gunaGradient2Panel14.Location = new System.Drawing.Point(15, 230);
+            this.gunaGradient2Panel14.Location = new System.Drawing.Point(15, 341);
             this.gunaGradient2Panel14.Margin = new System.Windows.Forms.Padding(4);
             this.gunaGradient2Panel14.Name = "gunaGradient2Panel14";
             this.gunaGradient2Panel14.Radius = 10;
@@ -413,7 +420,7 @@
             this.gunaGradient2Panel1.GradientColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(41)))), ((int)(((byte)(62)))));
             this.gunaGradient2Panel1.GradientColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(41)))), ((int)(((byte)(62)))));
             this.gunaGradient2Panel1.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
-            this.gunaGradient2Panel1.Location = new System.Drawing.Point(15, 360);
+            this.gunaGradient2Panel1.Location = new System.Drawing.Point(15, 462);
             this.gunaGradient2Panel1.Margin = new System.Windows.Forms.Padding(4);
             this.gunaGradient2Panel1.Name = "gunaGradient2Panel1";
             this.gunaGradient2Panel1.Radius = 10;
@@ -464,12 +471,73 @@
             this.LocationTwo.Size = new System.Drawing.Size(351, 49);
             this.LocationTwo.TabIndex = 5;
             // 
+            // gunaGradient2Panel3
+            // 
+            this.gunaGradient2Panel3.BackColor = System.Drawing.Color.Transparent;
+            this.gunaGradient2Panel3.Controls.Add(this.idText);
+            this.gunaGradient2Panel3.Controls.Add(this.CustomerID);
+            this.gunaGradient2Panel3.GradientColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(41)))), ((int)(((byte)(62)))));
+            this.gunaGradient2Panel3.GradientColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(41)))), ((int)(((byte)(62)))));
+            this.gunaGradient2Panel3.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
+            this.gunaGradient2Panel3.Location = new System.Drawing.Point(13, 219);
+            this.gunaGradient2Panel3.Margin = new System.Windows.Forms.Padding(4);
+            this.gunaGradient2Panel3.Name = "gunaGradient2Panel3";
+            this.gunaGradient2Panel3.Radius = 10;
+            this.gunaGradient2Panel3.Size = new System.Drawing.Size(474, 96);
+            this.gunaGradient2Panel3.TabIndex = 40;
+            // 
+            // idText
+            // 
+            this.idText.BackColor = System.Drawing.Color.Transparent;
+            this.idText.Controls.Add(this.gunaPictureBox2);
+            this.idText.GradientColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(127)))), ((int)(((byte)(199)))));
+            this.idText.GradientColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(127)))), ((int)(((byte)(199)))));
+            this.idText.Location = new System.Drawing.Point(383, 26);
+            this.idText.Margin = new System.Windows.Forms.Padding(4);
+            this.idText.Name = "idText";
+            this.idText.Radius = 10;
+            this.idText.Size = new System.Drawing.Size(57, 49);
+            this.idText.TabIndex = 16;
+            // 
+            // gunaPictureBox2
+            // 
+            this.gunaPictureBox2.BaseColor = System.Drawing.Color.White;
+            this.gunaPictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("gunaPictureBox2.Image")));
+            this.gunaPictureBox2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.gunaPictureBox2.Location = new System.Drawing.Point(1, 0);
+            this.gunaPictureBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.gunaPictureBox2.Name = "gunaPictureBox2";
+            this.gunaPictureBox2.Size = new System.Drawing.Size(56, 49);
+            this.gunaPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.gunaPictureBox2.TabIndex = 0;
+            this.gunaPictureBox2.TabStop = false;
+            this.gunaPictureBox2.Click += new System.EventHandler(this.gunaPictureBox2_Click);
+            // 
+            // CustomerID
+            // 
+            this.CustomerID.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(146)))), ((int)(((byte)(165)))));
+            this.CustomerID.BorderColor = System.Drawing.Color.Silver;
+            this.CustomerID.BorderSize = 0;
+            this.CustomerID.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.CustomerID.FocusedBaseColor = System.Drawing.Color.White;
+            this.CustomerID.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.CustomerID.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.CustomerID.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.CustomerID.Location = new System.Drawing.Point(24, 26);
+            this.CustomerID.Margin = new System.Windows.Forms.Padding(4);
+            this.CustomerID.Name = "CustomerID";
+            this.CustomerID.PasswordChar = '\0';
+            this.CustomerID.SelectedText = "";
+            this.CustomerID.Size = new System.Drawing.Size(351, 49);
+            this.CustomerID.TabIndex = 2;
+            // 
             // AddOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
             this.ClientSize = new System.Drawing.Size(1045, 647);
+            this.Controls.Add(this.gunaGradient2Panel3);
             this.Controls.Add(this.gunaGradient2Panel1);
             this.Controls.Add(this.gunaGradient2Panel14);
             this.Controls.Add(this.gunaGradient2Panel7);
@@ -495,6 +563,9 @@
             this.gunaGradient2Panel1.ResumeLayout(false);
             this.gunaGradient2Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).EndInit();
+            this.gunaGradient2Panel3.ResumeLayout(false);
+            this.idText.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -532,5 +603,9 @@
         private Guna.UI.WinForms.GunaGradient2Panel gunaGradient2Panel2;
         private Guna.UI.WinForms.GunaPictureBox gunaPictureBox1;
         private Guna.UI.WinForms.GunaTextBox LocationTwo;
+        private Guna.UI.WinForms.GunaGradient2Panel gunaGradient2Panel3;
+        private Guna.UI.WinForms.GunaGradient2Panel idText;
+        private Guna.UI.WinForms.GunaPictureBox gunaPictureBox2;
+        private Guna.UI.WinForms.GunaTextBox CustomerID;
     }
 }
