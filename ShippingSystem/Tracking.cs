@@ -58,6 +58,8 @@ namespace ShippingSystem
         }
         public void Tracking_Load(object sender, EventArgs e)
         {
+            gmap.Overlays.Clear();
+
             RefreshDataGridView(coll);
 
             String coll2 = "Truck";
@@ -74,8 +76,8 @@ namespace ShippingSystem
             {
                 var lat = db.SearchRecord(coll3, "Location_id", Convert.ToInt32(arr[0]));
 
-                BsonValue firstLocationX = 0;
-                BsonValue firstLocationY = 0;
+                BsonValue firstLocationX = 0.0;
+                BsonValue firstLocationY = 0.0;
 
                 foreach (var document in lat)
                 {
@@ -186,7 +188,7 @@ namespace ShippingSystem
                     double timeDifference = (currentTime - startTime).TotalSeconds;
 
                     // Calculate the current position
-                    double currentPosition = timeDifference % (travelTime - 2);
+                    double currentPosition = timeDifference % travelTime;
 
                     Console.WriteLine($"Current Position: {currentPosition}");
 
@@ -353,8 +355,6 @@ namespace ShippingSystem
             // Create a new DataTable
             DataTable dataTable = new DataTable();
 
-            
-
             // Add the data to the DataTable
             try
             {
@@ -404,15 +404,16 @@ namespace ShippingSystem
                 var location_id_string = Data.Rows[e.RowIndex].Cells["Location_id"].Value.ToString();
                 var location_id = MongoDB.Bson.Serialization.BsonSerializer.Deserialize<BsonArray>(location_id_string);
 
-                var order_id = int.Parse(Data.Rows[e.RowIndex].Cells["Order_id"].Value.ToString());
+                Console.WriteLine(location_id);
 
-                YourFunction(order_id, location_id);
+                MapOneTruck(location_id);
             }
         }
 
 
-        private void YourFunction(int order_id, BsonArray location_id)
+        private void MapOneTruck(BsonArray location_id)
         {
+            Console.WriteLine("Mapping truck with location ID: " + string.Join(", ", location_id));
 
             gmap.Overlays.Clear();
             // Get the Truck data from the Truck collection
@@ -433,30 +434,50 @@ namespace ShippingSystem
 
                 // Get the current time in UTC
                 DateTime currentTime = DateTime.UtcNow;
+                Console.WriteLine("Current UTC Time: " + currentTime);
 
                 // Get the start time and travel time from the truck data
-                DateTime startTime = truckData[0]["Start_Time"].ToUniversalTime();
-                double travelTime = (double)truckData[0]["Travel_Time"].AsDecimal128;
+                DateTime startTime = DateTime.MinValue;
+                BsonDateTime bsonDateTime = truckData[0]["Start_Time"].AsBsonDateTime;
+                startTime = bsonDateTime.ToUniversalTime();
+                Console.WriteLine("Truck Start Time: " + startTime);
+
+                BsonDecimal128 travelTimeBson = truckData[0]["Travel_Time"].AsDecimal128;
+                double travelTime = (double)travelTimeBson.ToDecimal();
+                Console.WriteLine("Travel Time: " + travelTime + " seconds");
 
                 // Calculate the difference in seconds between the current time and the start time
                 double timeDifference = (currentTime - startTime).TotalSeconds;
+                Console.WriteLine("Time Difference from Start: " + timeDifference + " seconds");
 
                 // Calculate the current position
-                double currentPosition = timeDifference % (travelTime - 2);
+                double currentPosition = timeDifference % travelTime;
+                Console.WriteLine("Current Position along the route: " + currentPosition + " seconds");
 
                 // Calculate the percentage of the trip completed
                 double percentageCompleted = currentPosition / travelTime;
+                Console.WriteLine("Percentage of Trip Completed: " + percentageCompleted * 100 + "%");
 
                 // Get the location data from the Location collection
                 String coll3 = "Location";
                 var firstLocation = db.SearchRecord(coll3, "Location_id", Convert.ToInt32(location_id[0]));
                 var secondLocation = db.SearchRecord(coll3, "Location_id", Convert.ToInt32(location_id[1]));
 
+                // Add more Console.WriteLine statements here as needed for debugging
+
+                BsonValue firstLocationX = 0.0;
+                BsonValue firstLocationY = 0.0;
+                BsonValue secondLocationX = 0.0;
+                BsonValue secondLocationY = 0.0;
+
                 // Get the coordinates of the first and second locations
-                double firstLocationX = Convert.ToDouble(firstLocation[0]["CordX"]);
-                double firstLocationY = Convert.ToDouble(firstLocation[0]["CordY"]);
-                double secondLocationX = Convert.ToDouble(secondLocation[0]["CordX"]);
-                double secondLocationY = Convert.ToDouble(secondLocation[0]["CordY"]);
+                firstLocationX = firstLocation[0]["CordX"];
+                firstLocationY = firstLocation[0]["CordY"];
+                secondLocationX = secondLocation[0]["CordX"];
+                secondLocationY = secondLocation[0]["CordY"];
+
+                Console.WriteLine("First Location Coordinates: (" + firstLocationX + ", " + firstLocationY + ")");
+                Console.WriteLine("Second Location Coordinates: (" + secondLocationX + ", " + secondLocationY + ")");
 
                 // Calculate the position of the marker
                 double markerX, markerY;
@@ -465,15 +486,15 @@ namespace ShippingSystem
                 {
                     // The marker is on the first half of the trip
                     percentageCompleted *= 2; // Adjust the percentage to be out of 100 for the first half
-                    markerX = firstLocationX + (secondLocationX - firstLocationX) * percentageCompleted;
-                    markerY = firstLocationY + (secondLocationY - firstLocationY) * percentageCompleted;
+                    markerX = Convert.ToDouble(firstLocationX) + (Convert.ToDouble(secondLocationX) - Convert.ToDouble(firstLocationX)) * percentageCompleted;
+                    markerY = Convert.ToDouble(firstLocationY) + (Convert.ToDouble(secondLocationY) - Convert.ToDouble(firstLocationY)) * percentageCompleted;
                 }
                 else
                 {
                     // The marker is on the second half of the trip
                     percentageCompleted = (percentageCompleted - 0.5) * 2; // Adjust the percentage to be out of 100 for the second half
-                    markerX = secondLocationX + (firstLocationX - secondLocationX) * percentageCompleted;
-                    markerY = secondLocationY + (firstLocationY - secondLocationY) * percentageCompleted;
+                    markerX = Convert.ToDouble(secondLocationX) + (Convert.ToDouble(firstLocationX) - Convert.ToDouble(secondLocationX)) * percentageCompleted;
+                    markerY = Convert.ToDouble(secondLocationY) + (Convert.ToDouble(firstLocationY) - Convert.ToDouble(secondLocationY)) * percentageCompleted;
                 }
 
                 // Create a Bitmap
@@ -495,10 +516,11 @@ namespace ShippingSystem
                     Offset = new Point(-10, -10) // Adjust these values as needed
                 };
 
-                GMapMarker marker1 = new GMarkerGoogle(new PointLatLng(firstLocationX, firstLocationY), GMarkerGoogleType.red);
-                GMapMarker marker2 = new GMarkerGoogle(new PointLatLng(secondLocationX, secondLocationY), GMarkerGoogleType.red);
+                GMapMarker marker1 = new GMarkerGoogle(new PointLatLng(Convert.ToDouble(firstLocationX), Convert.ToDouble(firstLocationY)), GMarkerGoogleType.red);
+                GMapMarker marker2 = new GMarkerGoogle(new PointLatLng(Convert.ToDouble(secondLocationX), Convert.ToDouble(secondLocationY)), GMarkerGoogleType.red);
 
                 markers.Markers.Add(markerTruck);
+
                 markers.Markers.Add(marker1);
                 markers.Markers.Add(marker2);
 
@@ -506,7 +528,7 @@ namespace ShippingSystem
                 List<PointLatLng> points1 = new List<PointLatLng>();
 
                 // Add the coordinates of your markers
-                points1.Add(new PointLatLng(firstLocationX, firstLocationY));
+                points1.Add(new PointLatLng(Convert.ToDouble(firstLocationX), Convert.ToDouble(firstLocationY)));
                 points1.Add(new PointLatLng(markerX, markerY));
 
                 // Create a new GMapRoute using the points
@@ -523,7 +545,7 @@ namespace ShippingSystem
 
                 // Add the coordinates of your markers
                 points2.Add(new PointLatLng(markerX, markerY));
-                points2.Add(new PointLatLng(secondLocationX, secondLocationY));
+                points2.Add(new PointLatLng(Convert.ToDouble(secondLocationX), Convert.ToDouble(secondLocationY)));
 
                 // Create a new GMapRoute using the points
                 GMapRoute gmapRoute2 = new GMapRoute(points2, "My line 2");
@@ -546,5 +568,13 @@ namespace ShippingSystem
             }
         }
 
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Tracking tracking = new Tracking();
+            tracking.WindowState = FormWindowState.Maximized;
+            tracking.Show();
+        }
     }
 }
